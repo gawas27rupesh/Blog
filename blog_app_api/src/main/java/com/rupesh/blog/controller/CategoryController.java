@@ -2,6 +2,8 @@ package com.rupesh.blog.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rupesh.blog.payloads.ApiResponse;
 import com.rupesh.blog.payloads.CategoryDto;
 import com.rupesh.blog.services.CategoryService;
-
-import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/category")

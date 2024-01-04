@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -27,8 +29,6 @@ import com.rupesh.blog.payloads.PostDto;
 import com.rupesh.blog.payloads.PostResponse;
 import com.rupesh.blog.services.FileService;
 import com.rupesh.blog.services.PostService;
-
-import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/api/post")

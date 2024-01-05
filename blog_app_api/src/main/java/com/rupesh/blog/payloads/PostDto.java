@@ -6,8 +6,6 @@ import java.util.Set;
 
 import javax.validation.constraints.NotEmpty;
 
-import com.rupesh.blog.entities.Comment;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

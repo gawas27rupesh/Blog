@@ -55,22 +55,14 @@ public class AuthController {
 		response.setToken(token);
 		return new ResponseEntity<JwtAuthResponse>(response, HttpStatus.OK);
 	}
-	
-	@PostMapping("/logout")
-    public ApiResponse logout(HttpServletRequest request, HttpServletResponse response) {
-        SecurityContextHolder.clearContext(); // Clear the security context
-        request.getSession().invalidate();
-        return new ApiResponse("Logout successfully...!!!",true);	
-    }
 
 	private void authenticate(String username, String password) {
-
 		UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(username,
 				password);
 		try {
 			this.authenticationManager.authenticate(authentication);
 		} catch (BadCredentialsException e) {
-			throw new BadCredentialsException(" Invalid Username or Password  !!");
+			throw new BadCredentialsException(" Invalid Username or Password...!!!");
 		}
 	}
 

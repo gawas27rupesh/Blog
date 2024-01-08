@@ -8,6 +8,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,6 @@ import com.rupesh.blog.payloads.JwtAuthRequest;
 import com.rupesh.blog.payloads.JwtAuthResponse;
 import com.rupesh.blog.security.JwtTokenHelper;
 
-import antlr.Token;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -67,9 +67,9 @@ public class AuthController {
         }
     }
 
-//    @ExceptionHandler(BadCredentialsException.class)
-//    public String exceptionHandler() {
-//        return "Credentials Invalid !!";
-//    }
+    @ExceptionHandler(BadCredentialsException.class)
+    public String exceptionHandler() {
+        return "Credentials Invalid !!";
+    }
 
 }

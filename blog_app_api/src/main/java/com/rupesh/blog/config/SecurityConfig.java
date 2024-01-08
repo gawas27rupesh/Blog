@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -18,7 +17,6 @@ import com.rupesh.blog.security.CustomUserDetailsService;
 import com.rupesh.blog.security.JwtAuthenticatiionFilter;
 import com.rupesh.blog.security.JwtAuthonticationEntryPoint;
 
-@SuppressWarnings("deprecation")
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
@@ -39,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.csrf()
 		.disable()
 		.authorizeHttpRequests()
-		.antMatchers("/api/v1/auth/login").permitAll()
+		.antMatchers("/api/v1/auth/*")
+		.permitAll()
 		.anyRequest()
 		.authenticated()
 		.and()
@@ -66,7 +65,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
-		
 		return super.authenticationManagerBean();
 	}
 }

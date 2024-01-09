@@ -30,6 +30,7 @@ public class UserController {
 	private UserService userService;
 	
 	//POST-create user
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/")
 	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto){
 		UserDto creUserDto=this.userService.createUser(userDto);
@@ -38,6 +39,7 @@ public class UserController {
 	
 	//PUT- update user//path uri variable
 	@PutMapping("/{userId}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto,@PathVariable("userId") Integer userId) {
 		 UserDto updateUser = this.userService.updateUser(userDto, userId);	
 		 return ResponseEntity.ok(updateUser);

@@ -1,0 +1,18 @@
+2024-01-09 17:21:37.665  INFO 12300 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 1.8.0_281 on RNT-PUN-1310 with PID 12300 (C:\Users\Rupesh Gawas\git\BlogApplication\blog_app_api\target\classes started by Rupesh Gawas in C:\Users\Rupesh Gawas\git\BlogApplication\blog_app_api)
+2024-01-09 17:21:37.666  INFO 12300 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-09 17:21:39.211  INFO 12300 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-09 17:21:39.212  INFO 12300 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-09 17:21:39.295  INFO 12300 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-09 17:21:39.833  INFO 12300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-09 17:21:40.013  INFO 12300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-09 17:21:42.327  INFO 12300 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 4.982 seconds (JVM running for 5.577)
+2024-01-09 17:22:00.229  INFO 12300 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-09 17:27:28.295  INFO 12300 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-09 17:27:28.311  INFO 12300 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-09 17:27:28.593  INFO 12300 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 1.8.0_281 on RNT-PUN-1310 with PID 12300 (C:\Users\Rupesh Gawas\git\BlogApplication\blog_app_api\target\classes started by Rupesh Gawas in C:\Users\Rupesh Gawas\git\BlogApplication\blog_app_api)
+2024-01-09 17:27:28.593  INFO 12300 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-09 17:27:29.342  INFO 12300 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-09 17:27:29.342  INFO 12300 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-09 17:27:29.362  INFO 12300 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-09 17:27:29.445  INFO 12300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-01-09 17:27:29.452  INFO 12300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.

@@ -70,5 +70,4 @@ public class AuthController {
 	public String exceptionHandler() {
 		return "Credentials Invalid !!";
 	}
-
 }

@@ -2,6 +2,7 @@ package com.rupesh.blog.entities;
 
 
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,8 +27,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "posts")
-public class Post {
+public class Post implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2973046851180267887L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer postId;

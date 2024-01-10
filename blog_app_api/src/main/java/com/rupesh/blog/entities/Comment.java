@@ -1,5 +1,7 @@
 package com.rupesh.blog.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +18,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "comment")
-public class Comment {
+public class Comment implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3644113900192619571L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

@@ -35,6 +35,11 @@ import lombok.Setter;
 @Setter
 public class User implements UserDetails {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3596479441912142403L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -84,6 +89,4 @@ public class User implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-	
-	
 }

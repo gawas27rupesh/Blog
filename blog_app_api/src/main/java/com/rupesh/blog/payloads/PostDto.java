@@ -1,5 +1,6 @@
 package com.rupesh.blog.payloads;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,8 +14,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class PostDto {
+public class PostDto implements Serializable{
 	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer postId;
 	@NotEmpty
 	private String title;

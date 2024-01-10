@@ -1,5 +1,6 @@
 package com.rupesh.blog.payloads;
 
+import java.io.Serializable;
 import java.util.List;
 
 import lombok.Getter;
@@ -9,8 +10,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class PostResponse {
+public class PostResponse implements Serializable{
 
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<PostDto> content;
 	private int pageNumber;
 	private int pageSize;

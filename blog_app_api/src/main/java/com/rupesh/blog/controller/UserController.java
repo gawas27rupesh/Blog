@@ -5,6 +5,9 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,6 +26,7 @@ import com.rupesh.blog.payloads.UserDto;
 import com.rupesh.blog.services.UserService;
 
 @RestController
+@EnableCaching
 @RequestMapping("/api/user")
 public class UserController {
 
@@ -65,7 +69,9 @@ public class UserController {
 	
 	//GET- user get
 	@GetMapping("/{userId}")
-	public ResponseEntity<UserDto> getSingleUser(@PathVariable Integer userId) {
+	//@Cacheable(value="CacheUser",key="#userId")
+	public ResponseEntity<UserDto> getSingleUser(@PathVariable("userId") Integer userId) {
+		System.out.println("Controller");
 		return ResponseEntity.ok(this.userService.getUserById(userId));
 	}
 }

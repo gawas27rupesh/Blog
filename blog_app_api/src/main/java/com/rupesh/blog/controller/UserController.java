@@ -30,8 +30,8 @@ public class UserController {
 	private UserService userService;
 	
 	//POST-create user
-	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/")
+	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto){
 		UserDto creUserDto=this.userService.createUser(userDto);
 		return new ResponseEntity<>(creUserDto,HttpStatus.CREATED);		
@@ -39,7 +39,7 @@ public class UserController {
 	
 	//PUT- update user//path uri variable
 	@PutMapping("/{userId}")
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto,@PathVariable("userId") Integer userId) {
 		 UserDto updateUser = this.userService.updateUser(userDto, userId);	
 		 return ResponseEntity.ok(updateUser);
@@ -47,7 +47,7 @@ public class UserController {
 	
 	//only ADMIN can delete
 	//DELETE -delete user
-	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	@DeleteMapping("/{userId}")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable("userId") Integer uid) {
 		 this.userService.deleteUser(uid);
@@ -55,9 +55,11 @@ public class UserController {
 	}
 	
 	//GET- All user get
+	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	@GetMapping("/")
 	@ResponseBody
 	public ResponseEntity<List<UserDto>> getAllUsers() {
+		System.out.println("Controller");
 		return ResponseEntity.ok(this.userService.getAllUsers());
 	}
 	
@@ -65,7 +67,6 @@ public class UserController {
 	@GetMapping("/{userId}")
 	public ResponseEntity<UserDto> getSingleUser(@PathVariable Integer userId) {
 		return ResponseEntity.ok(this.userService.getUserById(userId));
-		
 	}
 }
 

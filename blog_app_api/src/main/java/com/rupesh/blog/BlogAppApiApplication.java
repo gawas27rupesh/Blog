@@ -1,6 +1,7 @@
 package com.rupesh.blog;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -37,7 +38,7 @@ public class BlogAppApiApplication implements CommandLineRunner
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(this.passwordEncoder.encode("rajesh"));
+		//System.out.println(this.passwordEncoder.encode("rajesh"));
 		
 		try {
 			Role role=new Role();
@@ -48,13 +49,15 @@ public class BlogAppApiApplication implements CommandLineRunner
 			role1.setId(AppConstants.NORMAL_USER);
 			role1.setName("NORMAL_USER");
 			
-			List<Role> roles = List.of(role,role1);
+			List<Role> roles = new ArrayList<>();
+			roles.add(role);
+			roles.add(role1);
 			
 			List<Role> result = this.roleRepo.saveAll(roles);
 			
-			result.forEach(r ->{
-				System.out.println(r.getName());
-			});
+//			result.forEach(r ->{
+//				System.out.println(r.getName());
+//			});
 			
 		} catch (Exception e) {
 			

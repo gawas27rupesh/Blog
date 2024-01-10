@@ -1,5 +1,6 @@
 package com.rupesh.blog;
 
+
 import java.util.List;
 
 import org.modelmapper.ModelMapper;
@@ -44,11 +45,16 @@ public class BlogAppApiApplication implements CommandLineRunner
 			role.setName("ADMIN_USER");
 			
 			Role role1=new Role();
-			role1.setId(AppConstants.ADMIN_USER);
+			role1.setId(AppConstants.NORMAL_USER);
 			role1.setName("NORMAL_USER");
 			
-		
+			List<Role> roles = List.of(role,role1);
 			
+			List<Role> result = this.roleRepo.saveAll(roles);
+			
+			result.forEach(r ->{
+				System.out.println(r.getName());
+			});
 			
 		} catch (Exception e) {
 			

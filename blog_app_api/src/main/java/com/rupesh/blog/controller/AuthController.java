@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rupesh.blog.exceptions.ApiException;
 import com.rupesh.blog.payloads.JwtAuthRequest;
 import com.rupesh.blog.payloads.JwtAuthResponse;
+import com.rupesh.blog.payloads.UserDto;
 import com.rupesh.blog.security.JwtTokenHelper;
+import com.rupesh.blog.services.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -35,8 +37,11 @@ public class AuthController {
 
 	@Autowired
 	private JwtTokenHelper jwtTokenHelper;
+	
+	@Autowired
+	private UserService userService;
 
-    private Logger logger = LoggerFactory.getLogger(AuthController.class);
+	private Logger logger = LoggerFactory.getLogger(AuthController.class);
 
 	@PostMapping("/login")
 	public ResponseEntity<JwtAuthResponse> createToken(@RequestBody JwtAuthRequest request) {
@@ -61,8 +66,9 @@ public class AuthController {
 		}
 	}
 
-//	@ExceptionHandler(BadCredentialsException.class)
-//	public String exceptionHandler() {
-//		return "Credentials Invalid !!";
-//	}
+	@PostMapping("/register")
+	public ResponseEntity<UserDto> registerUser(@RequestBody UserDto userDto) {
+		UserDto registerNewUser = this.userService.registerNewUser(userDto);
+		return new ResponseEntity<UserDto>(registerNewUser,HttpStatus.CREATED) ;
+	}
 }

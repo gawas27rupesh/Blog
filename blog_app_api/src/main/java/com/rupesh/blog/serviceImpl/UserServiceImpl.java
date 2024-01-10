@@ -10,10 +10,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.rupesh.blog.config.AppConstants;
+import com.rupesh.blog.dto.UserDto;
 import com.rupesh.blog.entities.Role;
 import com.rupesh.blog.entities.User;
 import com.rupesh.blog.exceptions.ResourceNotFoundException;
-import com.rupesh.blog.payloads.UserDto;
 import com.rupesh.blog.repositories.RoleRepo;
 import com.rupesh.blog.repositories.UserRepo;
 import com.rupesh.blog.services.UserService;

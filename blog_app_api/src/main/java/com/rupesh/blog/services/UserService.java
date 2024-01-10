@@ -2,7 +2,7 @@ package com.rupesh.blog.services;
 
 import java.util.List;
 
-import com.rupesh.blog.payloads.UserDto;
+import com.rupesh.blog.dto.UserDto;
 
 public interface UserService {
 	

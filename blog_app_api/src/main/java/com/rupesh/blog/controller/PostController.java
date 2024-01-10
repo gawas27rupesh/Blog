@@ -24,9 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.rupesh.blog.config.AppConstants;
-import com.rupesh.blog.payloads.ApiResponse;
-import com.rupesh.blog.payloads.PostDto;
-import com.rupesh.blog.payloads.PostResponse;
+import com.rupesh.blog.dto.ApiResponse;
+import com.rupesh.blog.dto.PostDto;
+import com.rupesh.blog.dto.PostResponse;
 import com.rupesh.blog.services.FileService;
 import com.rupesh.blog.services.PostService;
 
@@ -51,17 +51,6 @@ public class PostController {
 		PostDto createPost = this.postService.createPost(postDto, userId, categoryId);
 		return new ResponseEntity<PostDto>(createPost,HttpStatus.CREATED);	
 	}
-	
-	//get by user
-//	@GetMapping("/user/{userId}/posts")
-//	public ResponseEntity<PostResponse> getPostByUser(
-//			@PathVariable Integer userId,
-//			@RequestParam(value = "pageNumber",defaultValue = "0",required = false) Integer pageNumber,
-//			@RequestParam(value = "pageSize",defaultValue = "3",required = false) Integer pageize
-//			) {
-//		PostResponse posts = this.postService.getPostsByUSer(userId,pageNumber,pageize);
-//		return new ResponseEntity<PostResponse>(posts,HttpStatus.OK);	
-//	}
 	
 	@GetMapping("/user/{userId}/posts")
 	public ResponseEntity<PostResponse> getPostByUser(
@@ -96,11 +85,6 @@ public class PostController {
 		return new ResponseEntity<PostResponse>(allPost,HttpStatus.OK);		
 	}
 	
-//	@GetMapping("/")
-//	public ResponseEntity<List<PostDto>> getAllPost() {
-//		List<PostDto> allPost = this.postService.getAllPost();
-//		return new ResponseEntity<List<PostDto>>(allPost,HttpStatus.OK);		
-//	}
 	
 	//get post details by id
 	@GetMapping("/{postId}")

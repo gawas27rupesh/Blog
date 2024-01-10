@@ -1,6 +1,6 @@
 package com.rupesh.blog.services;
 
-import com.rupesh.blog.payloads.CommentDto;
+import com.rupesh.blog.dto.CommentDto;
 
 public interface CommentService {
 	

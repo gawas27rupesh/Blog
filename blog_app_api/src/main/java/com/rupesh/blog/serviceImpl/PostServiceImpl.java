@@ -13,12 +13,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.rupesh.blog.dto.PostDto;
+import com.rupesh.blog.dto.PostResponse;
 import com.rupesh.blog.entities.Category;
 import com.rupesh.blog.entities.Post;
 import com.rupesh.blog.entities.User;
 import com.rupesh.blog.exceptions.ResourceNotFoundException;
-import com.rupesh.blog.payloads.PostDto;
-import com.rupesh.blog.payloads.PostResponse;
 import com.rupesh.blog.repositories.CategoryRepo;
 import com.rupesh.blog.repositories.PostRepo;
 import com.rupesh.blog.repositories.UserRepo;

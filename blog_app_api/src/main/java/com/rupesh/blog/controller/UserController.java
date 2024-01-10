@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rupesh.blog.payloads.ApiResponse;
-import com.rupesh.blog.payloads.UserDto;
+import com.rupesh.blog.dto.ApiResponse;
+import com.rupesh.blog.dto.UserDto;
 import com.rupesh.blog.services.UserService;
 
 @RestController
@@ -59,7 +59,6 @@ public class UserController {
 	}
 	
 	//GET- All user get
-	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	@GetMapping("/")
 	@ResponseBody
 	public ResponseEntity<List<UserDto>> getAllUsers() {

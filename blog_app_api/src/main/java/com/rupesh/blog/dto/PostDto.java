@@ -1,4 +1,4 @@
-package com.rupesh.blog.payloads;
+package com.rupesh.blog.dto;
 
 import java.io.Serializable;
 import java.sql.Date;

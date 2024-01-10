@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rupesh.blog.dto.JwtAuthRequest;
+import com.rupesh.blog.dto.JwtAuthResponse;
+import com.rupesh.blog.dto.UserDto;
 import com.rupesh.blog.exceptions.ApiException;
-import com.rupesh.blog.payloads.JwtAuthRequest;
-import com.rupesh.blog.payloads.JwtAuthResponse;
-import com.rupesh.blog.payloads.UserDto;
 import com.rupesh.blog.security.JwtTokenHelper;
 import com.rupesh.blog.services.UserService;
 

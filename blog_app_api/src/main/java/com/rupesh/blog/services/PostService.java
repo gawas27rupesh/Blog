@@ -2,8 +2,8 @@ package com.rupesh.blog.services;
 
 import java.util.List;
 
-import com.rupesh.blog.payloads.PostDto;
-import com.rupesh.blog.payloads.PostResponse;
+import com.rupesh.blog.dto.PostDto;
+import com.rupesh.blog.dto.PostResponse;
 
 public interface PostService {
 	//create

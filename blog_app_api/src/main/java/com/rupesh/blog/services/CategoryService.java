@@ -2,7 +2,7 @@ package com.rupesh.blog.services;
 
 import java.util.List;
 
-import com.rupesh.blog.payloads.CategoryDto;
+import com.rupesh.blog.dto.CategoryDto;
 
 public interface CategoryService {
 

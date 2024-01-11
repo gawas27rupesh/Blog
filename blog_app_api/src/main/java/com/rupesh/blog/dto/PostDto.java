@@ -30,7 +30,7 @@ public class PostDto implements Serializable{
 	
 	private String imageName;
 	
-	private Date addedDate;
+	private String addedDate;
 	
 	private CategoryDto category;
 	

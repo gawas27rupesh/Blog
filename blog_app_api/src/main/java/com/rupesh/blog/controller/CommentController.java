@@ -15,13 +15,13 @@ import com.rupesh.blog.dto.CommentDto;
 import com.rupesh.blog.services.CommentService;
 
 @RestController
-@RequestMapping("/api/comment")
+@RequestMapping("/api/comments")
 public class CommentController {
 
 	@Autowired
 	private CommentService commentService;
 
-	@PostMapping("/post/{postId}/comments")
+	@PostMapping("/{postId}/comments")
 	public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto, @PathVariable Integer postId) {
 
 		CommentDto createComment = this.commentService.createComment(commentDto, postId);

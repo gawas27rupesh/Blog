@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rupesh.blog.dto.CategoryDto;
@@ -13,14 +12,14 @@ import com.rupesh.blog.exceptions.ResourceNotFoundException;
 import com.rupesh.blog.repositories.CategoryRepo;
 import com.rupesh.blog.services.CategoryService;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class CategorySarviceImpl implements CategoryService {
 	
-	@Autowired
-	private CategoryRepo categoryRepo;
-	
-	@Autowired
-	private ModelMapper modelMapper;
+	private final CategoryRepo categoryRepo;
+	private final ModelMapper modelMapper;
 
 	@Override
 	public CategoryDto createCategory(CategoryDto categoryDto) {

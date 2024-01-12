@@ -15,8 +15,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class PostDto implements Serializable{
-	
-	
 	/**
 	 * 
 	 */

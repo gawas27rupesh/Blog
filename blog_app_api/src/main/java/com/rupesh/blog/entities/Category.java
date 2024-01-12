@@ -24,7 +24,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "categories")
 public class Category implements Serializable{
-	
 	/**
 	 * 
 	 */

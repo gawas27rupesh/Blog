@@ -29,12 +29,15 @@ import com.rupesh.blog.dto.PostResponse;
 import com.rupesh.blog.services.FileService;
 import com.rupesh.blog.services.PostService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/post")
 public class PostController {
 
-	private static PostService postService;
-	private static FileService fileService;
+	private final PostService postService;
+	private final FileService fileService;
 
 	@Value("${project.image}") // project.image from application.properties
 	private String path;

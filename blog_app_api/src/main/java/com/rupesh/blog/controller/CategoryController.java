@@ -20,11 +20,14 @@ import com.rupesh.blog.dto.ApiResponse;
 import com.rupesh.blog.dto.CategoryDto;
 import com.rupesh.blog.services.CategoryService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/category")
 public class CategoryController {
 
-	private static CategoryService categoryService;
+	private final CategoryService categoryService;
 
 	// create
 	@PostMapping("/")

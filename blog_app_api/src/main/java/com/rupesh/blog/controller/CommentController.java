@@ -13,11 +13,14 @@ import com.rupesh.blog.dto.ApiResponse;
 import com.rupesh.blog.dto.CommentDto;
 import com.rupesh.blog.services.CommentService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/comments")
 public class CommentController {
 
-	private static CommentService commentService;
+	private final CommentService commentService;
 
 	@PostMapping("/{postId}/comments")
 	public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto, @PathVariable Integer postId) {

@@ -22,12 +22,15 @@ import com.rupesh.blog.dto.ApiResponse;
 import com.rupesh.blog.dto.UserDto;
 import com.rupesh.blog.services.UserService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @EnableCaching
+@RequiredArgsConstructor
 @RequestMapping("/api/user")
 public class UserController {
 
-	private static UserService userService;
+	private final UserService userService;
 
 	// POST-create user
 	@PostMapping("/")

@@ -19,14 +19,17 @@ import com.rupesh.blog.exceptions.ApiException;
 import com.rupesh.blog.security.JwtTokenHelper;
 import com.rupesh.blog.services.UserService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/auth")
 public class AuthController {
 
-	private static UserDetailsService userDetailsService;
-	private static AuthenticationManager authenticationManager;
-	private static JwtTokenHelper jwtTokenHelper;
-	private static UserService userService;
+	private final UserDetailsService userDetailsService;
+	private final AuthenticationManager authenticationManager;
+	private final JwtTokenHelper jwtTokenHelper;
+	private final UserService userService;
 
 	@PostMapping("/login")
 	public ResponseEntity<JwtAuthResponse> createToken(@RequestBody JwtAuthRequest request) {

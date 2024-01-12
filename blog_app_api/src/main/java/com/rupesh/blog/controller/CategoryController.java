@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,14 +24,13 @@ import com.rupesh.blog.services.CategoryService;
 @RequestMapping("/api/category")
 public class CategoryController {
 
-	@Autowired
-	private CategoryService categoryService;
+	private static CategoryService categoryService;
 
 	// create
 	@PostMapping("/")
 	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
-		CategoryDto createCategoryDto = this.categoryService.createCategory(categoryDto);
-		return new ResponseEntity<CategoryDto>(createCategoryDto, HttpStatus.CREATED);
+		CategoryDto createCategoryDto = categoryService.createCategory(categoryDto);
+		return new ResponseEntity<>(createCategoryDto, HttpStatus.CREATED);
 
 	}
 
@@ -40,7 +38,7 @@ public class CategoryController {
 	@PutMapping("/{categoryId}")
 	public ResponseEntity<CategoryDto> updateUser(@Valid @RequestBody CategoryDto categoryDto,
 			@PathVariable("categoryId") Integer categoryId) {
-		CategoryDto updateCategory = this.categoryService.updateCategory(categoryDto, categoryId);
+		CategoryDto updateCategory = categoryService.updateCategory(categoryDto, categoryId);
 		return ResponseEntity.ok(updateCategory);
 
 	}
@@ -48,15 +46,15 @@ public class CategoryController {
 	// Delete
 	@DeleteMapping("/{categoryId}")
 	public ResponseEntity<ApiResponse> deleteCategory(@PathVariable("categoryId") Integer categoryId) {
-		this.categoryService.deleteCategory(categoryId);
-		return new ResponseEntity<ApiResponse>(new ApiResponse("Category deleted Successfully", true), HttpStatus.OK);
+		categoryService.deleteCategory(categoryId);
+		return new ResponseEntity<>(new ApiResponse("Category deleted Successfully", true), HttpStatus.OK);
 	}
 
 	// get
 	@GetMapping("/{categoryId}")
 	public ResponseEntity<CategoryDto> getCategory(@Valid @PathVariable("categoryId") Integer categoryId) {
-		CategoryDto getCat = this.categoryService.getCategory(categoryId);
-		return new ResponseEntity<CategoryDto>(getCat, HttpStatus.OK);
+		CategoryDto getCat = categoryService.getCategory(categoryId);
+		return new ResponseEntity<>(getCat, HttpStatus.OK);
 
 	}
 
@@ -64,7 +62,7 @@ public class CategoryController {
 	@GetMapping("/")
 	@ResponseBody
 	public ResponseEntity<List<CategoryDto>> getAllCategory() {
-		List<CategoryDto> allCat = this.categoryService.getCategories();
+		List<CategoryDto> allCat = categoryService.getCategories();
 		return ResponseEntity.ok(allCat);
 
 	}

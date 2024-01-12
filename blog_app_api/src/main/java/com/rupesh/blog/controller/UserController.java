@@ -4,9 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,49 +27,44 @@ import com.rupesh.blog.services.UserService;
 @RequestMapping("/api/user")
 public class UserController {
 
-	@Autowired
-	private UserService userService;
-	
-	//POST-create user
+	private static UserService userService;
+
+	// POST-create user
 	@PostMapping("/")
 	@PreAuthorize("hasAuthority('ADMIN_USER')")
-	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto){
-		UserDto creUserDto=this.userService.createUser(userDto);
-		return new ResponseEntity<>(creUserDto,HttpStatus.CREATED);		
+	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto) {
+		UserDto creUserDto = userService.createUser(userDto);
+		return new ResponseEntity<>(creUserDto, HttpStatus.CREATED);
 	}
-	
-	//PUT- update user//path uri variable
+
+	// PUT- update user//path uri variable
 	@PutMapping("/{userId}")
 	@PreAuthorize("hasAuthority('ADMIN_USER')")
-	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto,@PathVariable("userId") Integer userId) {
-		 UserDto updateUser = this.userService.updateUser(userDto, userId);	
-		 return ResponseEntity.ok(updateUser);
+	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto,
+			@PathVariable("userId") Integer userId) {
+		UserDto updateUser = userService.updateUser(userDto, userId);
+		return ResponseEntity.ok(updateUser);
 	}
-	
-	//only ADMIN can delete
-	//DELETE -delete user
+
+	// only ADMIN can delete
+	// DELETE -delete user
 	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	@DeleteMapping("/{userId}")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable("userId") Integer uid) {
-		 this.userService.deleteUser(uid);
-		 return new ResponseEntity<ApiResponse>(new ApiResponse("User deleted Successfully",true),HttpStatus.OK);
+		userService.deleteUser(uid);
+		return new ResponseEntity<>(new ApiResponse("User deleted Successfully", true), HttpStatus.OK);
 	}
-	
-	//GET- All user get
+
+	// GET- All user get
 	@GetMapping("/")
 	@ResponseBody
 	public ResponseEntity<List<UserDto>> getAllUsers() {
-		System.out.println("Controller");
-		return ResponseEntity.ok(this.userService.getAllUsers());
+		return ResponseEntity.ok(userService.getAllUsers());
 	}
-	
-	//GET- user get
+
+	// GET- user get
 	@GetMapping("/{userId}")
-	//@Cacheable(value="CacheUser",key="#userId")
 	public ResponseEntity<UserDto> getSingleUser(@PathVariable("userId") Integer userId) {
-		System.out.println("Controller");
-		return ResponseEntity.ok(this.userService.getUserById(userId));
+		return ResponseEntity.ok(userService.getUserById(userId));
 	}
 }
-
-	

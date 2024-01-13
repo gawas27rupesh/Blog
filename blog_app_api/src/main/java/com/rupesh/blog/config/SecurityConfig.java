@@ -2,6 +2,7 @@ package com.rupesh.blog.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -27,6 +28,9 @@ import lombok.RequiredArgsConstructor;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
+	public static final String[] PUBLIC_URLS = { "/api/v1/auth/**", "/v3/api-docs", "/v2/api-docs",
+			"/swagger-resources/**", "/swagger-ui/**", "/webjars/**" }; //http://localhost:8080/swagger-ui/index.html
+	
 	private final CustomUserDetailsService customUserDetailsService;
 	private final JwtAuthonticationEntryPoint jwtAuthonticationEntryPoint;
 	private final JwtAuthenticatiionFilter jwtAuthenticatiionFilter;
@@ -38,8 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.csrf()
 		.disable()
 		.authorizeHttpRequests()
-		.antMatchers("/api/v1/auth/**").permitAll()
-		.antMatchers("/v3/api-docs").permitAll()
+		.antMatchers(PUBLIC_URLS).permitAll()
+		.antMatchers(HttpMethod.GET).permitAll()
 		.anyRequest()
 		.authenticated()
 		.and()

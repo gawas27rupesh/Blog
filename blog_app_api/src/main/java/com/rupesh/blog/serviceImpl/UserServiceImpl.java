@@ -18,11 +18,13 @@ import com.rupesh.blog.repositories.UserRepo;
 import com.rupesh.blog.services.UserService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-	
+
 	private final UserRepo userRepo;
 	private final ModelMapper modelMapper;
 	private final PasswordEncoder passwordEncoder;
@@ -30,51 +32,59 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserDto createUser(UserDto userDto) {
+		log.info("Service Implementation");
 		User savedUser = userRepo.save(this.modelMapper.map(userDto, User.class));
 		return this.modelMapper.map(savedUser, UserDto.class);
 	}
 
 	@Override
 	public UserDto updateUser(UserDto userDto, Integer userId) {
-		User user=this.userRepo.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User","id",userId));
-		
+		log.info("Service Implementation");
+		User user = this.userRepo.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "id", userId));
+
 		user.setName(userDto.getName());
 		user.setEmail(userDto.getEmail());
 		user.setPassword(userDto.getPassword());
 		user.setAbout(userDto.getAbout());
-		User updateUser =this.userRepo.save(user);
+		User updateUser = this.userRepo.save(user);
 		return this.modelMapper.map(updateUser, UserDto.class);
 	}
 
 	@Override
 	public UserDto getUserById(Integer userId) {
-		User user=this.userRepo.findById(userId).orElseThrow(()->new ResourceNotFoundException("User", "Id", userId));
-		System.out.println("Service Implementation");
+		log.info("Service Implementation");
+		User user = this.userRepo.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
 		return this.modelMapper.map(user, UserDto.class);
 	}
 
 	@Override
 	public List<UserDto> getAllUsers() {
+		log.info("Service Implementation");
 		List<User> users = this.userRepo.findAll();
-		System.out.println("Service Implementation");
-		List<UserDto> userDto=users.stream().map(user->this.modelMapper.map(user, UserDto.class)).collect(Collectors.toList());
+		List<UserDto> userDto = users.stream().map(user -> this.modelMapper.map(user, UserDto.class))
+				.collect(Collectors.toList());
 		return userDto;
 	}
 
 	@Override
 	public void deleteUser(Integer userId) {
-		User user=this.userRepo.findById(userId).orElseThrow(()->new ResourceNotFoundException("User", "Id", userId));
+		log.info("Service Implementation");
+		User user = this.userRepo.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
 		this.userRepo.delete(user);
 	}
 
 	@Override
 	public UserDto registerNewUser(UserDto userDto) {
+		log.info("Service Implementation");
 		User user = this.modelMapper.map(userDto, User.class);
-		
-		//encoded password
+
+		// encoded password
 		user.setPassword(this.passwordEncoder.encode(user.getPassword()));
-		
-		//roles
+
+		// roles
 		Role role = this.roleRepo.findById(AppConstants.NORMAL_USER).get();
 		user.getRoles().add(role);
 		User newUser = this.userRepo.save(user);

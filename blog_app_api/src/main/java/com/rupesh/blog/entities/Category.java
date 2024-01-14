@@ -23,11 +23,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name = "categories")
-public class Category implements Serializable{
+public class Category implements Serializable {
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 4052103421693829348L;
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

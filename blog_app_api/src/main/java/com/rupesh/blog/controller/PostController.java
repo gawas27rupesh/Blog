@@ -30,7 +30,9 @@ import com.rupesh.blog.services.FileService;
 import com.rupesh.blog.services.PostService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/post")
@@ -46,6 +48,7 @@ public class PostController {
 	@PostMapping("/user/{userId}/category/{categoryId}/posts")
 	public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto, @PathVariable Integer userId,
 			@PathVariable Integer categoryId) {
+		log.info("Create Post");
 		PostDto createPost = postService.createPost(postDto, userId, categoryId);
 		return new ResponseEntity<>(createPost, HttpStatus.CREATED);
 	}
@@ -54,6 +57,7 @@ public class PostController {
 	public ResponseEntity<PostResponse> getPostByUser(@PathVariable Integer userId,
 			@RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
 			@RequestParam(value = "pageSize", defaultValue = "3", required = false) Integer pageize) {
+		log.info("Fetch Post by User");
 		PostResponse posts = postService.getPostsByUSer(userId, pageNumber, pageize);
 		return new ResponseEntity<>(posts, HttpStatus.OK);
 	}
@@ -63,6 +67,7 @@ public class PostController {
 	public ResponseEntity<PostResponse> getPostByCategory(@PathVariable Integer categoryId,
 			@RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
 			@RequestParam(value = "pageSize", defaultValue = "4", required = false) Integer pageize) {
+		log.info("Fetch Post by Category");
 		PostResponse posts = postService.getPostsByCategory(categoryId, pageNumber, pageize);
 		return new ResponseEntity<>(posts, HttpStatus.OK);
 	}
@@ -74,6 +79,7 @@ public class PostController {
 			@RequestParam(value = "pageSize", defaultValue = AppConstants.PAGE_SIZE, required = false) Integer pageize,
 			@RequestParam(value = "sortBy", defaultValue = AppConstants.SORT_BY, required = false) String sortBy,
 			@RequestParam(value = "sortDir", defaultValue = AppConstants.SORT_DIR, required = false) String sortDir) {
+		log.info("Fetch All Post");
 		PostResponse allPost = postService.getAllPost(pageNumber, pageize, sortBy, sortDir);
 		return new ResponseEntity<>(allPost, HttpStatus.OK);
 	}
@@ -81,6 +87,7 @@ public class PostController {
 	// get post details by id
 	@GetMapping("/{postId}")
 	public ResponseEntity<PostDto> getPostById(@PathVariable Integer postId) {
+		log.info("Fetch Post by Post Id");
 		PostDto postDto = postService.getPostById(postId);
 		return new ResponseEntity<>(postDto, HttpStatus.OK);
 	}
@@ -88,6 +95,7 @@ public class PostController {
 	// delete post
 	@DeleteMapping("/{postId}")
 	public ApiResponse deletePost(@PathVariable Integer postId) {
+		log.info("Delete Post");
 		postService.deletePost(postId);
 		return new ApiResponse("Post is successfully deleted !!", true);
 	}
@@ -95,6 +103,7 @@ public class PostController {
 	// update post
 	@PutMapping("/{postId}")
 	public ResponseEntity<PostDto> updatePodt(@RequestBody PostDto postDto, @PathVariable Integer postId) {
+		log.info("Update Post");
 		PostDto updatePost = postService.updatePost(postDto, postId);
 		return new ResponseEntity<>(updatePost, HttpStatus.OK);
 	}
@@ -102,6 +111,7 @@ public class PostController {
 	// Search
 	@GetMapping("/search/{keywords}")
 	public ResponseEntity<List<PostDto>> searchPostByTitle(@PathVariable("keywords") String keywords) {
+		log.info("Fetch Post by Search");
 		List<PostDto> result = postService.searchPosts(keywords);
 		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
@@ -110,6 +120,7 @@ public class PostController {
 	@PostMapping("/image/upload/{postId}")
 	public ResponseEntity<PostDto> uploadPostImage(@RequestParam("image") MultipartFile image,
 			@PathVariable Integer postId) throws IOException {
+		log.info("Upload Image");
 		PostDto postDto = postService.getPostById(postId);
 		String fileName = fileService.uploadImage(path, image);
 		postDto.setImageName(fileName);
@@ -121,6 +132,7 @@ public class PostController {
 	@GetMapping(value = "/image/{imageName}", produces = MediaType.IMAGE_JPEG_VALUE)
 	public void downloadImage(@PathVariable("imageName") String imageName, HttpServletResponse response)
 			throws IOException {
+		log.info("Fetch Post Image");
 		InputStream resource = fileService.getResource(path, imageName);
 		response.setContentType(MediaType.IMAGE_JPEG_VALUE);
 		StreamUtils.copy(resource, response.getOutputStream());

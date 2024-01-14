@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,7 +22,9 @@ import com.rupesh.blog.dto.CategoryDto;
 import com.rupesh.blog.services.CategoryService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/category")
@@ -32,6 +35,7 @@ public class CategoryController {
 	// create
 	@PostMapping("/")
 	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
+		log.info("Create Category");
 		CategoryDto createCategoryDto = categoryService.createCategory(categoryDto);
 		return new ResponseEntity<>(createCategoryDto, HttpStatus.CREATED);
 
@@ -41,6 +45,7 @@ public class CategoryController {
 	@PutMapping("/{categoryId}")
 	public ResponseEntity<CategoryDto> updateUser(@Valid @RequestBody CategoryDto categoryDto,
 			@PathVariable("categoryId") Integer categoryId) {
+		log.info("Update Category");
 		CategoryDto updateCategory = categoryService.updateCategory(categoryDto, categoryId);
 		return ResponseEntity.ok(updateCategory);
 
@@ -49,6 +54,7 @@ public class CategoryController {
 	// Delete
 	@DeleteMapping("/{categoryId}")
 	public ResponseEntity<ApiResponse> deleteCategory(@PathVariable("categoryId") Integer categoryId) {
+		log.info("Delete Category");
 		categoryService.deleteCategory(categoryId);
 		return new ResponseEntity<>(new ApiResponse("Category deleted Successfully", true), HttpStatus.OK);
 	}
@@ -56,17 +62,17 @@ public class CategoryController {
 	// get
 	@GetMapping("/{categoryId}")
 	public ResponseEntity<CategoryDto> getCategory(@Valid @PathVariable("categoryId") Integer categoryId) {
+		log.info("Fetch Category");
 		CategoryDto getCat = categoryService.getCategory(categoryId);
 		return new ResponseEntity<>(getCat, HttpStatus.OK);
-
 	}
 
 	// getAllCategory
 	@GetMapping("/")
 	@ResponseBody
 	public ResponseEntity<List<CategoryDto>> getAllCategory() {
+		log.info("Fetch All Category");
 		List<CategoryDto> allCat = categoryService.getCategories();
 		return ResponseEntity.ok(allCat);
-
 	}
 }

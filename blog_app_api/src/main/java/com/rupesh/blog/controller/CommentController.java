@@ -14,7 +14,9 @@ import com.rupesh.blog.dto.CommentDto;
 import com.rupesh.blog.services.CommentService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/comments")
@@ -24,12 +26,14 @@ public class CommentController {
 
 	@PostMapping("/{postId}/comments")
 	public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto, @PathVariable Integer postId) {
+		log.info("Create Comment");
 		CommentDto createComment = commentService.createComment(commentDto, postId);
 		return new ResponseEntity<>(createComment, HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/{commentId}")
 	public ResponseEntity<ApiResponse> deleteComment(@PathVariable Integer commentId) {
+		log.info("Delete Comment");
 		commentService.deleteComment(commentId);
 		return new ResponseEntity<>(new ApiResponse("Comment Deleted Successfully", true), HttpStatus.OK);
 	}

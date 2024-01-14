@@ -20,7 +20,9 @@ import com.rupesh.blog.security.JwtTokenHelper;
 import com.rupesh.blog.services.UserService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/auth")
@@ -33,6 +35,7 @@ public class AuthController {
 
 	@PostMapping("/login")
 	public ResponseEntity<JwtAuthResponse> createToken(@RequestBody JwtAuthRequest request) {
+		log.info("");
 		this.authenticate(request.getUsername(), request.getPassword());
 		UserDetails userDetails = userDetailsService.loadUserByUsername(request.getUsername());
 		String token = jwtTokenHelper.generateToken(userDetails);

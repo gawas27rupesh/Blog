@@ -12,8 +12,10 @@ import com.rupesh.blog.repositories.PostRepo;
 import com.rupesh.blog.services.CommentService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class CommentServiceImpl implements CommentService{
 	
@@ -23,6 +25,7 @@ public class CommentServiceImpl implements CommentService{
 
 	@Override
 	public CommentDto createComment(CommentDto commentDto, Integer postId) {
+		log.info("Service Implementation");
 		Post post = this.postRepo.findById(postId).orElseThrow(()->new ResourceNotFoundException("Post", "postId", postId));
 		Comment comment = this.modelMapper.map(commentDto, Comment.class);
 		comment.setPost(post);
@@ -32,6 +35,7 @@ public class CommentServiceImpl implements CommentService{
 
 	@Override
 	public void deleteComment(Integer commentId) {
+		log.info("Service Implementation");
 		Comment comment = this.commentRepo.findById(commentId).orElseThrow(()->new ResourceNotFoundException("Comment","commentId",commentId));
 		this.commentRepo.delete(comment);
 	}

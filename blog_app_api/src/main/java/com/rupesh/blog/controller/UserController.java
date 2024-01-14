@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,9 +22,10 @@ import com.rupesh.blog.dto.UserDto;
 import com.rupesh.blog.services.UserService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
-@EnableCaching
 @RequiredArgsConstructor
 @RequestMapping("/api/user")
 public class UserController {
@@ -36,6 +36,7 @@ public class UserController {
 	@PostMapping("/")
 	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto) {
+		log.info("Added User");
 		UserDto creUserDto = userService.createUser(userDto);
 		return new ResponseEntity<>(creUserDto, HttpStatus.CREATED);
 	}
@@ -45,6 +46,7 @@ public class UserController {
 	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto,
 			@PathVariable("userId") Integer userId) {
+		log.info("Update User");
 		UserDto updateUser = userService.updateUser(userDto, userId);
 		return ResponseEntity.ok(updateUser);
 	}
@@ -54,6 +56,7 @@ public class UserController {
 	@PreAuthorize("hasAuthority('ADMIN_USER')")
 	@DeleteMapping("/{userId}")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable("userId") Integer uid) {
+		log.info("Delete User");
 		userService.deleteUser(uid);
 		return new ResponseEntity<>(new ApiResponse("User deleted Successfully", true), HttpStatus.OK);
 	}
@@ -62,12 +65,14 @@ public class UserController {
 	@GetMapping("/")
 	@ResponseBody
 	public ResponseEntity<List<UserDto>> getAllUsers() {
+		log.info("Fetch All User");
 		return ResponseEntity.ok(userService.getAllUsers());
 	}
 
 	// GET- user get
 	@GetMapping("/{userId}")
 	public ResponseEntity<UserDto> getSingleUser(@PathVariable("userId") Integer userId) {
+		log.info("Fetch User");
 		return ResponseEntity.ok(userService.getUserById(userId));
 	}
 }

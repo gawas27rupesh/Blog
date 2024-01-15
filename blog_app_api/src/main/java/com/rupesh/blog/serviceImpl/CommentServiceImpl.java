@@ -1,6 +1,8 @@
 package com.rupesh.blog.serviceImpl;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.rupesh.blog.dto.CommentDto;
@@ -24,6 +26,7 @@ public class CommentServiceImpl implements CommentService{
 	private final CommentRepo commentRepo;
 
 	@Override
+	@Cacheable("blogCache")
 	public CommentDto createComment(CommentDto commentDto, Integer postId) {
 		log.info("Service Implementation");
 		Post post = this.postRepo.findById(postId).orElseThrow(()->new ResourceNotFoundException("Post", "postId", postId));
@@ -34,6 +37,7 @@ public class CommentServiceImpl implements CommentService{
 	}
 
 	@Override
+	@CacheEvict("blogCache")
 	public void deleteComment(Integer commentId) {
 		log.info("Service Implementation");
 		Comment comment = this.commentRepo.findById(commentId).orElseThrow(()->new ResourceNotFoundException("Comment","commentId",commentId));

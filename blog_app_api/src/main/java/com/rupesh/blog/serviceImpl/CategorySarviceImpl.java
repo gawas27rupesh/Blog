@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,7 @@ public class CategorySarviceImpl implements CategoryService {
 	}
 
 	@Override
+	@CachePut(value="Cat",key="#categoryId")
 	public CategoryDto updateCategory(CategoryDto categoryDto, Integer categoryId) {
 		log.info("Service Implementation");
 		Category cat = this.categoryRepo.findById(categoryId)
@@ -45,6 +48,7 @@ public class CategorySarviceImpl implements CategoryService {
 	}
 
 	@Override
+	@CacheEvict(value="Cat",allEntries = true)
 	public void deleteCategory(Integer categoryId) {
 		log.info("Service Implementation");
 		Category delCat = this.categoryRepo.findById(categoryId).orElseThrow(()->new ResourceNotFoundException("Category", "id", categoryId));
@@ -54,6 +58,7 @@ public class CategorySarviceImpl implements CategoryService {
 	
 
 	@Override
+	@Cacheable(value="Cat")
 	public List<CategoryDto> getCategories() {
 		log.info("Service Implementation");
 		List<Category> getAll = this.categoryRepo.findAll();
@@ -62,11 +67,10 @@ public class CategorySarviceImpl implements CategoryService {
 	}
 
 	@Override
-	@Cacheable("blogCache")
+	@Cacheable(value="Cat",key="#categoryId")
 	public CategoryDto getCategory(Integer categoryId) {
 		log.info("Service Implementation");
 		Category getCat = this.categoryRepo.findById(categoryId).orElseThrow(()->new ResourceNotFoundException("Category", "id", categoryId));
-		log.info("2");
 		return this.modelMapper.map(getCat, CategoryDto.class);
 	}
 }

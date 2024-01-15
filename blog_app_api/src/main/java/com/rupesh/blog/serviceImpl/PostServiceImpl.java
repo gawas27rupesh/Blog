@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -36,6 +39,7 @@ public class PostServiceImpl implements PostService {
 	private final ModelMapper modelMapper;
 
 	@Override
+	@Cacheable("blogCache")
 	public PostDto createPost(PostDto postDto, Integer userId, Integer categoryId) {
 		log.info("Service Implementation");
 		User user = this.userRepo.findById(userId)
@@ -51,6 +55,7 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
+	@CachePut("blogCache")
 	public PostDto updatePost(PostDto postDto, Integer postId) {
 		log.info("Service Implementation");
 		Post post = this.postRepo.findById(postId)
@@ -63,6 +68,7 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
+	@CacheEvict("blogCache")
 	public void deletePost(Integer postId) {
 		log.info("Service Implementation");
 		Post post = this.postRepo.findById(postId)
@@ -71,6 +77,7 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
+	@Cacheable("blogCache")
 	public PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
 		log.info("Service Implementation");
 		Sort sort = (sortDir.equalsIgnoreCase("asc")) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
@@ -93,6 +100,7 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
+	@Cacheable("blogCache")
 	public List<PostDto> getAllPost() {
 		log.info("Service Implementation");
 		List<Post> pagePost = this.postRepo.findAll();
@@ -102,6 +110,7 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
+	@Cacheable("blogCache")
 	public PostDto getPostById(Integer postId) {
 		log.info("Service Implementation");
 		Post post = this.postRepo.findById(postId)
@@ -110,6 +119,7 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
+	@Cacheable("blogCache")
 	public PostResponse getPostsByCategory(Integer categoryId, Integer pageNumber, Integer pageSize) {
 		log.info("Service Implementation");
 		Pageable p = PageRequest.of(pageNumber, pageSize);
@@ -129,6 +139,7 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
+	@Cacheable("blogCache")
 	public PostResponse getPostsByUSer(Integer userId, Integer pageNumber, Integer pageSize) {
 		log.info("Service Implementation");
 		Pageable p = PageRequest.of(pageNumber, pageSize);
@@ -148,6 +159,7 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
+	@Cacheable("blogCache")
 	public List<PostDto> searchPosts(String keyword) {
 		log.info("Service Implementation");
 		List<Post> posts = this.postRepo.findByTitleContaining(keyword);
@@ -155,5 +167,4 @@ public class PostServiceImpl implements PostService {
 				.collect(Collectors.toList());
 		return postDto;
 	}
-
 }

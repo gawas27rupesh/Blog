@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +34,7 @@ public class UserServiceImpl implements UserService {
 	private final RoleRepo roleRepo;
 
 	@Override
+	@Cacheable("blogCache")
 	public UserDto createUser(UserDto userDto) {
 		log.info("Service Implementation");
 		User savedUser = userRepo.save(this.modelMapper.map(userDto, User.class));
@@ -38,6 +42,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@CachePut("blogCache")
 	public UserDto updateUser(UserDto userDto, Integer userId) {
 		log.info("Service Implementation");
 		User user = this.userRepo.findById(userId)
@@ -52,6 +57,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Cacheable("userCache")
 	public UserDto getUserById(Integer userId) {
 		log.info("Service Implementation");
 		User user = this.userRepo.findById(userId)
@@ -60,6 +66,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Cacheable("userCache")
 	public List<UserDto> getAllUsers() {
 		log.info("Service Implementation");
 		List<User> users = this.userRepo.findAll();
@@ -69,6 +76,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@CacheEvict(value = "userCache",key="#userId")
 	public void deleteUser(Integer userId) {
 		log.info("Service Implementation");
 		User user = this.userRepo.findById(userId)
@@ -77,6 +85,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Cacheable(value="userCache")
 	public UserDto registerNewUser(UserDto userDto) {
 		log.info("Service Implementation");
 		User user = this.modelMapper.map(userDto, User.class);

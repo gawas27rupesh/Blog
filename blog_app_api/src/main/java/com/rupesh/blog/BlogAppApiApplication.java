@@ -7,7 +7,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 
 import com.rupesh.blog.config.AppConstants;
@@ -20,7 +19,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequiredArgsConstructor
 @SpringBootApplication
-@EnableCaching
 public class BlogAppApiApplication implements CommandLineRunner {
 
 	private final RoleRepo roleRepo;
@@ -39,11 +37,11 @@ public class BlogAppApiApplication implements CommandLineRunner {
 		try {
 			Role role = new Role();
 			role.setId(AppConstants.ADMIN_USER);
-			role.setName("ADMIN_USER");
+			role.setName("ROLE_ADMIN");
 
 			Role role1 = new Role();
 			role1.setId(AppConstants.NORMAL_USER);
-			role1.setName("NORMAL_USER");
+			role1.setName("ROLE_NORMAL");
 
 			List<Role> roles = new ArrayList<>();
 			roles.add(role);

@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +32,7 @@ public class CategorySarviceImpl implements CategoryService {
 	}
 
 	@Override
-	@CachePut(value="Cat",key="#categoryId")
+	//@CachePut(value="Cat",key="#categoryId")
 	public CategoryDto updateCategory(CategoryDto categoryDto, Integer categoryId) {
 		log.info("Service Implementation");
 		Category cat = this.categoryRepo.findById(categoryId)
@@ -48,7 +46,7 @@ public class CategorySarviceImpl implements CategoryService {
 	}
 
 	@Override
-	@CacheEvict(value="Cat",allEntries = true)
+	//@CacheEvict(value="Cat",allEntries = true)
 	public void deleteCategory(Integer categoryId) {
 		log.info("Service Implementation");
 		Category delCat = this.categoryRepo.findById(categoryId).orElseThrow(()->new ResourceNotFoundException("Category", "id", categoryId));
@@ -62,15 +60,16 @@ public class CategorySarviceImpl implements CategoryService {
 	public List<CategoryDto> getCategories() {
 		log.info("Service Implementation");
 		List<Category> getAll = this.categoryRepo.findAll();
-		List<CategoryDto> catDtos = getAll.stream().map( (cat)-> this.modelMapper.map(cat,CategoryDto.class)).collect(Collectors.toList());
+		List<CategoryDto> catDtos = getAll.stream().map(cat-> this.modelMapper.map(cat,CategoryDto.class)).collect(Collectors.toList());
 		return catDtos;
 	}
 
 	@Override
-	@Cacheable(value="Cat",key="#categoryId")
-	public CategoryDto getCategory(Integer categoryId) {
+	@Cacheable(value="Cat")
+	public Category getCategory(Integer categoryId) {
 		log.info("Service Implementation");
 		Category getCat = this.categoryRepo.findById(categoryId).orElseThrow(()->new ResourceNotFoundException("Category", "id", categoryId));
-		return this.modelMapper.map(getCat, CategoryDto.class);
+		//return this.modelMapper.map(getCat, CategoryDto.class);
+		return getCat;
 	}
 }

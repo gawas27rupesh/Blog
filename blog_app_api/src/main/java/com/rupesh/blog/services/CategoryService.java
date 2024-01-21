@@ -3,6 +3,7 @@ package com.rupesh.blog.services;
 import java.util.List;
 
 import com.rupesh.blog.dto.CategoryDto;
+import com.rupesh.blog.entities.Category;
 
 public interface CategoryService {
 
@@ -20,5 +21,5 @@ public interface CategoryService {
 	List<CategoryDto> getCategories();
 
 	//get
-	CategoryDto getCategory(Integer categoryId);
+	Category getCategory(Integer categoryId);
 }

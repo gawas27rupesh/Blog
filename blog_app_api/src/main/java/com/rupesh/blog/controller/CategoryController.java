@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rupesh.blog.dto.ApiResponse;
 import com.rupesh.blog.dto.CategoryDto;
+import com.rupesh.blog.entities.Category;
 import com.rupesh.blog.services.CategoryService;
 
 import lombok.RequiredArgsConstructor;
@@ -61,9 +61,9 @@ public class CategoryController {
 
 	// get
 	@GetMapping("/{categoryId}")
-	public ResponseEntity<CategoryDto> getCategory(@Valid @PathVariable("categoryId") Integer categoryId) {
+	public ResponseEntity<Category> getCategory(@Valid @PathVariable("categoryId") Integer categoryId) {
 		log.info("Fetch Category");
-		CategoryDto getCat = categoryService.getCategory(categoryId);
+		Category getCat = categoryService.getCategory(categoryId);
 		return new ResponseEntity<>(getCat, HttpStatus.OK);
 	}
 

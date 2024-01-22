@@ -1,44 +1,267 @@
-2024-01-21 21:23:56.672  INFO 1548 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 1548 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
-2024-01-21 21:23:56.675  INFO 1548 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
-2024-01-21 21:23:58.092  INFO 1548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
-2024-01-21 21:23:58.098  INFO 1548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
-2024-01-21 21:23:58.098  INFO 1548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2024-01-21 21:23:58.099  INFO 1548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
-2024-01-21 21:23:58.100  INFO 1548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-21 21:23:58.100  INFO 1548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2024-01-21 21:23:58.177  INFO 1548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
-2024-01-21 21:23:58.379  INFO 1548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-21 21:23:58.446  INFO 1548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-21 21:24:00.500  WARN 1548 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
-2024-01-21 21:24:00.501  WARN 1548 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
-2024-01-21 21:24:00.503  INFO 1548 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 3.895 seconds (JVM running for 135.33)
-2024-01-21 21:24:26.004  INFO 1548 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-21 21:24:26.050  INFO 1548 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-21 21:24:30.159  INFO 1548 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 1548 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
-2024-01-21 21:24:30.161  INFO 1548 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
-2024-01-21 21:24:31.048  INFO 1548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
-2024-01-21 21:24:31.049  INFO 1548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
-2024-01-21 21:24:31.049  INFO 1548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2024-01-21 21:24:31.050  INFO 1548 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
-2024-01-21 21:24:31.051  INFO 1548 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-21 21:24:31.051  INFO 1548 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2024-01-21 21:24:31.089  INFO 1548 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
-2024-01-21 21:24:31.180  INFO 1548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-01-21 21:24:31.184  INFO 1548 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-01-21 21:24:32.438  WARN 1548 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
-2024-01-21 21:24:32.438  WARN 1548 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
-2024-01-21 21:24:32.440  INFO 1548 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.343 seconds (JVM running for 167.267)
-2024-01-21 21:27:16.625  INFO 1548 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-21 21:27:16.738  INFO 1548 --- [http-nio-8080-exec-1] c.rupesh.blog.controller.UserController  : Fetch All User
-2024-01-21 21:27:17.207 ERROR 1548 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/blog] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379] with root cause
+2024-01-22 00:00:21.986  INFO 640 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2024-01-22 00:00:22.008  INFO 640 --- [Thread-35] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2024-01-22 00:00:54.117  INFO 640 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 640 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 00:00:54.118  INFO 640 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 00:00:55.190  INFO 640 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 00:00:55.190  INFO 640 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 00:00:55.191  INFO 640 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 00:00:55.191  INFO 640 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 00:00:55.192  INFO 640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 00:00:55.192  INFO 640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 00:00:55.226  INFO 640 --- [restartedMain] o.a.c.c.C.[.[localhost].[/blog]          : Initializing Spring embedded WebApplicationContext
+2024-01-22 00:00:55.304  INFO 640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2024-01-22 00:00:55.309  INFO 640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2024-01-22 00:00:56.795  WARN 640 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 00:00:56.795  WARN 640 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 00:00:56.796  INFO 640 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.772 seconds (JVM running for 1959.323)
+2024-01-22 00:00:57.175  INFO 640 --- [RMI TCP Connection(36)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2024-01-22 00:00:57.178  INFO 640 --- [RMI TCP Connection(36)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2024-01-22 00:01:00.294  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 11908 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 00:01:00.296  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 00:01:03.356  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 00:01:03.357  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 00:01:03.358  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 00:01:03.370  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 00:01:03.388  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 00:01:03.388  INFO 11908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 00:01:03.617  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-22 00:01:04.351  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-22 00:01:04.556  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-22 00:01:09.020  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 00:01:09.021  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 00:01:09.027  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 9.382 seconds (JVM running for 10.485)
+2024-01-22 00:01:16.833  INFO 11908 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-22 00:01:16.906  INFO 11908 --- [http-nio-8080-exec-1] c.rupesh.blog.controller.UserController  : Fetch User
+2024-01-22 00:01:17.419 ERROR 11908 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/blog] threw exception [Request processing failed; nested exception is java.lang.ClassCastException: class com.rupesh.blog.dto.UserDto cannot be cast to class com.rupesh.blog.dto.UserDto (com.rupesh.blog.dto.UserDto is in unnamed module of loader 'app'; com.rupesh.blog.dto.UserDto is in unnamed module of loader org.springframework.boot.devtools.restart.classloader.RestartClassLoader @12c014ab)] with root cause
 
-java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
+java.lang.ClassCastException: class com.rupesh.blog.dto.UserDto cannot be cast to class com.rupesh.blog.dto.UserDto (com.rupesh.blog.dto.UserDto is in unnamed module of loader 'app'; com.rupesh.blog.dto.UserDto is in unnamed module of loader org.springframework.boot.devtools.restart.classloader.RestartClassLoader @12c014ab)
+	at com.rupesh.blog.serviceImpl.UserServiceImpl$$EnhancerBySpringCGLIB$$c2876c5b.getUserById(<generated>) ~[classes/:na]
+	at com.rupesh.blog.controller.UserController.getSingleUser(UserController.java:76) ~[classes/:na]
+	at com.rupesh.blog.controller.UserController$$FastClassBySpringCGLIB$$cd3a8ec1.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386) ~[spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85) ~[spring-aop-5.3.22.jar:5.3.22]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) ~[spring-aop-5.3.22.jar:5.3.22]
+	at com.rupesh.blog.controller.UserController$$EnhancerBySpringCGLIB$$7446dd42.getSingleUser(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1070) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.22.jar:5.3.22]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.65.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilterInternal(AuthorizationFilter.java:73) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at com.rupesh.blog.security.JwtAuthenticatiionFilter.doFilterInternal(JwtAuthenticatiionFilter.java:82) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:112) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:82) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.7.2.jar:5.7.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.22.jar:5.3.22]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.65.jar:9.0.65]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2024-01-22 00:01:21.937  INFO 11908 --- [http-nio-8080-exec-4] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:03:51.800  INFO 11908 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-22 00:03:51.812  INFO 11908 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-22 00:03:51.956  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 11908 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 00:03:51.957  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 00:03:52.897  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 00:03:52.898  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 00:03:52.898  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 00:03:52.899  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 00:03:52.900  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 00:03:52.902  INFO 11908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 00:03:52.974  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-22 00:03:53.122  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-01-22 00:03:53.128  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-01-22 00:03:54.662  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 00:03:54.663  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 00:03:54.665  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.76 seconds (JVM running for 176.123)
+2024-01-22 00:07:43.378  INFO 11908 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-01-22 00:07:43.383  INFO 11908 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-01-22 00:07:43.541  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 11908 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 00:07:43.542  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 00:07:44.363  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 00:07:44.364  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 00:07:44.364  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 00:07:44.365  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 00:07:44.366  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 00:07:44.366  INFO 11908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 00:07:44.416  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-22 00:07:44.553  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-01-22 00:07:44.559  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-01-22 00:07:45.951  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 00:07:45.951  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 00:07:45.952  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.471 seconds (JVM running for 407.41)
+2024-01-22 00:08:04.801  INFO 11908 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-01-22 00:08:04.805  INFO 11908 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-01-22 00:08:04.952  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 11908 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 00:08:04.953  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 00:08:05.887  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 00:08:05.888  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 00:08:05.888  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 00:08:05.889  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 00:08:05.890  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 00:08:05.890  INFO 11908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 00:08:05.939  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-22 00:08:06.079  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-01-22 00:08:06.084  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-01-22 00:08:07.485  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 00:08:07.486  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 00:08:07.488  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.596 seconds (JVM running for 428.946)
+2024-01-22 00:09:51.153  INFO 11908 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-01-22 00:09:51.157  INFO 11908 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-01-22 00:09:51.318  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 11908 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 00:09:51.318  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 00:09:52.096  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 00:09:52.096  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 00:09:52.097  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 00:09:52.098  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 00:09:52.099  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 00:09:52.099  INFO 11908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 00:09:52.145  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-22 00:09:52.295  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-01-22 00:09:52.300  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-01-22 00:09:53.768  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 00:09:53.769  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 00:09:53.770  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.522 seconds (JVM running for 535.229)
+2024-01-22 00:10:07.508  INFO 11908 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-01-22 00:10:07.512  INFO 11908 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-01-22 00:10:07.670  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 11908 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 00:10:07.670  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 00:10:08.418  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 00:10:08.419  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 00:10:08.419  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 00:10:08.419  INFO 11908 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 00:10:08.420  INFO 11908 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 00:10:08.421  INFO 11908 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 00:10:08.470  INFO 11908 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-22 00:10:08.592  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-01-22 00:10:08.597  INFO 11908 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-01-22 00:10:09.885  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 00:10:09.885  WARN 11908 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 00:10:09.887  INFO 11908 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.273 seconds (JVM running for 551.345)
+2024-01-22 00:10:23.964  INFO 11908 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-22 00:10:23.976  INFO 11908 --- [http-nio-8080-exec-2] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:10:25.692  INFO 11908 --- [http-nio-8080-exec-3] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:10:30.620  INFO 11908 --- [http-nio-8080-exec-4] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:10:36.681  INFO 11908 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-01-22 00:10:36.685  INFO 11908 --- [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-01-22 00:10:39.855  INFO 9036 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 9036 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 00:10:39.857  INFO 9036 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 00:10:42.997  INFO 9036 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 00:10:42.999  INFO 9036 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 00:10:43.000  INFO 9036 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 00:10:43.007  INFO 9036 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 00:10:43.023  INFO 9036 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 00:10:43.024  INFO 9036 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 00:10:43.231  INFO 9036 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-22 00:10:43.894  INFO 9036 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-22 00:10:44.131  INFO 9036 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-22 00:10:48.344  WARN 9036 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 00:10:48.344  WARN 9036 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 00:10:48.350  INFO 9036 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 9.106 seconds (JVM running for 10.214)
+2024-01-22 00:10:56.729  INFO 9036 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-22 00:10:56.795  INFO 9036 --- [http-nio-8080-exec-2] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:11:30.820  INFO 9036 --- [http-nio-8080-exec-3] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:11:36.289  INFO 9036 --- [http-nio-8080-exec-4] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:12:22.638  INFO 9036 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-22 00:12:22.651  INFO 9036 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-22 00:12:22.812  INFO 9036 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 9036 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 00:12:22.812  INFO 9036 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 00:12:23.701  INFO 9036 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 00:12:23.702  INFO 9036 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 00:12:23.702  INFO 9036 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 00:12:23.703  INFO 9036 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 00:12:23.704  INFO 9036 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 00:12:23.705  INFO 9036 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 00:12:23.758  INFO 9036 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-22 00:12:23.898  INFO 9036 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-01-22 00:12:23.906  INFO 9036 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-01-22 00:12:25.341  WARN 9036 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 00:12:25.342  WARN 9036 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 00:12:25.343  INFO 9036 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.597 seconds (JVM running for 107.208)
+2024-01-22 00:12:34.753  INFO 9036 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-22 00:12:34.765  INFO 9036 --- [http-nio-8080-exec-2] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:12:42.853  INFO 9036 --- [http-nio-8080-exec-3] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:14:02.084  INFO 9036 --- [lettuce-nioEventLoop-7-1] io.lettuce.core.protocol.CommandHandler  : null Unexpected exception during request: java.net.SocketException: Connection reset
+
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426) ~[na:na]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258) ~[netty-buffer-4.1.79.Final.jar:4.1.79.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.79.Final.jar:4.1.79.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
 	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
 	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
 	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
@@ -47,23 +270,21 @@ java.net.ConnectException: Connection refused: no further information
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.79.Final.jar:4.1.79.Final]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
 
-2024-01-21 21:27:45.334  INFO 1548 --- [http-nio-8080-exec-5] c.rupesh.blog.controller.AuthController  : 
-2024-01-21 21:28:03.633  INFO 1548 --- [http-nio-8080-exec-6] c.rupesh.blog.controller.UserController  : Fetch All User
-2024-01-21 21:28:03.638 ERROR 1548 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/blog] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379] with root cause
-
-java.net.ConnectException: Connection refused: no further information
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
-	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946) ~[na:na]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496) ~[netty-transport-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.79.Final.jar:4.1.79.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.79.Final.jar:4.1.79.Final]
-	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
-
-2024-01-21 21:28:27.136  INFO 1548 --- [http-nio-8080-exec-8] c.rupesh.blog.controller.UserController  : Fetch All User
+2024-01-22 00:14:02.171  INFO 9036 --- [lettuce-eventExecutorLoop-5-3] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was /127.0.0.1:6379
+2024-01-22 00:14:02.185  WARN 9036 --- [lettuce-nioEventLoop-7-2] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-01-22 00:14:04.805  INFO 9036 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-01-22 00:14:04.818  INFO 9036 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-01-22 09:29:46.399  INFO 5632 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5632 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-22 09:29:46.401  INFO 5632 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-22 09:29:49.995  INFO 5632 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-22 09:29:49.996  INFO 5632 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-22 09:29:49.997  INFO 5632 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-22 09:29:50.002  INFO 5632 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-22 09:29:50.020  INFO 5632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-22 09:29:50.021  INFO 5632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-22 09:29:50.247  INFO 5632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-22 09:29:51.061  INFO 5632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-22 09:29:51.401  INFO 5632 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-22 09:29:57.032  WARN 5632 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-22 09:29:57.032  WARN 5632 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-22 09:29:57.038  INFO 5632 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 11.296 seconds (JVM running for 12.71)

@@ -35,13 +35,10 @@ public class CategorySarviceImpl implements CategoryService {
 	//@CachePut(value="Cat",key="#categoryId")
 	public CategoryDto updateCategory(CategoryDto categoryDto, Integer categoryId) {
 		log.info("Service Implementation");
-		Category cat = this.categoryRepo.findById(categoryId)
-				.orElseThrow(()->new ResourceNotFoundException("Category","id",categoryId));
+		Category map = modelMapper.map(categoryDto, Category.class);
+		map.setCategoryId(categoryId);
 		
-		cat.setCategoryTitle(categoryDto.getCategoryTitle());
-		cat.setCategoryDescription(categoryDto.getCategoryDescription());
-		
-		Category UpdateCat = this.categoryRepo.save(cat);	
+		Category UpdateCat = this.categoryRepo.save(modelMapper.map(categoryDto, Category.class));
 		return this.modelMapper.map(UpdateCat, CategoryDto.class);
 	}
 

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rupesh.blog.dto.ApiResponse;
@@ -32,8 +31,7 @@ public class CategoryController {
 
 	private final CategoryService categoryService;
 
-	// create
-	@PostMapping("/")
+	@PostMapping
 	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
 		log.info("Create Category");
 		CategoryDto createCategoryDto = categoryService.createCategory(categoryDto);
@@ -41,7 +39,6 @@ public class CategoryController {
 
 	}
 
-	// update
 	@PutMapping("/{categoryId}")
 	public ResponseEntity<CategoryDto> updateUser(@Valid @RequestBody CategoryDto categoryDto,
 			@PathVariable("categoryId") Integer categoryId) {
@@ -51,7 +48,6 @@ public class CategoryController {
 
 	}
 
-	// Delete
 	@DeleteMapping("/{categoryId}")
 	public ResponseEntity<ApiResponse> deleteCategory(@PathVariable("categoryId") Integer categoryId) {
 		log.info("Delete Category");
@@ -59,7 +55,6 @@ public class CategoryController {
 		return new ResponseEntity<>(new ApiResponse("Category deleted Successfully", true), HttpStatus.OK);
 	}
 
-	// get
 	@GetMapping("/{categoryId}")
 	public ResponseEntity<Category> getCategory(@Valid @PathVariable("categoryId") Integer categoryId) {
 		log.info("Fetch Category");
@@ -67,9 +62,7 @@ public class CategoryController {
 		return new ResponseEntity<>(getCat, HttpStatus.OK);
 	}
 
-	// getAllCategory
-	@GetMapping("/")
-	@ResponseBody
+	@GetMapping
 	public ResponseEntity<List<CategoryDto>> getAllCategory() {
 		log.info("Fetch All Category");
 		List<CategoryDto> allCat = categoryService.getCategories();

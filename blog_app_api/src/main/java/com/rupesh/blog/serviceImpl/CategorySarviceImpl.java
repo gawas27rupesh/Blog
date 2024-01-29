@@ -37,8 +37,7 @@ public class CategorySarviceImpl implements CategoryService {
 		log.info("Service Implementation");
 		Category map = modelMapper.map(categoryDto, Category.class);
 		map.setCategoryId(categoryId);
-		
-		Category UpdateCat = this.categoryRepo.save(modelMapper.map(categoryDto, Category.class));
+		Category UpdateCat = categoryRepo.save(map);
 		return this.modelMapper.map(UpdateCat, CategoryDto.class);
 	}
 

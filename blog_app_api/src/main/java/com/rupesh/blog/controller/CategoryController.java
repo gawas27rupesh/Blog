@@ -31,7 +31,7 @@ public class CategoryController {
 
 	private final CategoryService categoryService;
 
-	@PostMapping
+	@PostMapping//ok
 	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
 		log.info("Create Category");
 		CategoryDto createCategoryDto = categoryService.createCategory(categoryDto);
@@ -48,21 +48,21 @@ public class CategoryController {
 
 	}
 
-	@DeleteMapping("/{categoryId}")
+	@DeleteMapping("/{categoryId}")//ok
 	public ResponseEntity<ApiResponse> deleteCategory(@PathVariable("categoryId") Integer categoryId) {
 		log.info("Delete Category");
 		categoryService.deleteCategory(categoryId);
 		return new ResponseEntity<>(new ApiResponse("Category deleted Successfully", true), HttpStatus.OK);
 	}
 
-	@GetMapping("/{categoryId}")
+	@GetMapping("/{categoryId}")//ok
 	public ResponseEntity<Category> getCategory(@Valid @PathVariable("categoryId") Integer categoryId) {
 		log.info("Fetch Category");
 		Category getCat = categoryService.getCategory(categoryId);
 		return new ResponseEntity<>(getCat, HttpStatus.OK);
 	}
 
-	@GetMapping
+	@GetMapping//ok
 	public ResponseEntity<List<CategoryDto>> getAllCategory() {
 		log.info("Fetch All Category");
 		List<CategoryDto> allCat = categoryService.getCategories();

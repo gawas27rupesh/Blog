@@ -33,10 +33,10 @@ public class CategorySarviceImpl implements CategoryService {
 
 	@Override
 	//@CachePut(value="Cat",key="#categoryId")
-	public CategoryDto updateCategory(CategoryDto categoryDto, Integer categoryId) {
+	public CategoryDto updateCategory(CategoryDto categoryDto) {
 		log.info("Service Implementation");
 		Category map = modelMapper.map(categoryDto, Category.class);
-		map.setCategoryId(categoryId);
+		//map.setCategoryId(categoryDto.getCategoryId());
 		Category UpdateCat = categoryRepo.save(map);
 		return this.modelMapper.map(UpdateCat, CategoryDto.class);
 	}

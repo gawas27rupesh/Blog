@@ -274,3 +274,5 @@
 2024-01-29 09:53:27.185  INFO 5784 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-01-29 09:53:27.226  INFO 5784 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
 2024-01-29 09:53:27.229  INFO 5784 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:54:54.572  INFO 5784 --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2024-01-29 09:54:54.577  INFO 5784 --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.

@@ -2,6 +2,8 @@ package com.rupesh.blog.services;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.rupesh.blog.dto.CategoryDto;
 import com.rupesh.blog.entities.Category;
 
@@ -10,8 +12,6 @@ public interface CategoryService {
 	//create
 	CategoryDto createCategory(CategoryDto categoryDto);
 	
-	//update
-	CategoryDto updateCategory(CategoryDto categoryDto,Integer categoryId);
 	
 	//delete
 	void deleteCategory(Integer categoryId);
@@ -22,4 +22,6 @@ public interface CategoryService {
 
 	//get
 	Category getCategory(Integer categoryId);
+
+	CategoryDto updateCategory(@Valid CategoryDto categoryDto);
 }

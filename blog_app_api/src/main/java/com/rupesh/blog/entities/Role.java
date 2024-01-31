@@ -10,6 +10,6 @@ import lombok.Data;
 public class Role {
 	
 	@Id
-	private int id;
+	private int roleId;
 	private String name;
 }

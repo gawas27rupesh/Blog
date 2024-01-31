@@ -23,5 +23,5 @@ public interface CategoryService {
 	//get
 	Category getCategory(Integer categoryId);
 
-	CategoryDto updateCategory(@Valid CategoryDto categoryDto);
+	CategoryDto updateCategory(@Valid CategoryDto categoryDto, Integer categoryId);
 }

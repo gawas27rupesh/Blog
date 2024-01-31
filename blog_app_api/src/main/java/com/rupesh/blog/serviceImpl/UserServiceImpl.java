@@ -45,14 +45,9 @@ public class UserServiceImpl implements UserService {
 	@CachePut("blogCache")
 	public UserDto updateUser(UserDto userDto, Integer userId) {
 		log.info("Service Implementation");
-		User user = this.userRepo.findById(userId)
-				.orElseThrow(() -> new ResourceNotFoundException("User", "id", userId));
-
-		user.setName(userDto.getName());
-		user.setEmail(userDto.getEmail());
-		user.setPassword(userDto.getPassword());
-		user.setAbout(userDto.getAbout());
-		User updateUser = this.userRepo.save(user);
+		User map = modelMapper.map(userDto, User.class);
+		map.setUserId(userId);
+		User updateUser = this.userRepo.save(map);
 		return this.modelMapper.map(updateUser, UserDto.class);
 	}
 

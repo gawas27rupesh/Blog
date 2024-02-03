@@ -58,12 +58,9 @@ public class PostServiceImpl implements PostService {
 	@CachePut("blogCache")
 	public PostDto updatePost(PostDto postDto, Integer postId) {
 		log.info("Service Implementation");
-		Post post = this.postRepo.findById(postId)
-				.orElseThrow(() -> new ResourceNotFoundException("Post", "postid", postId));
-		post.setTitle(postDto.getTitle());
-		post.setContent(postDto.getContent());
-		post.setImageName(postDto.getImageName());
-		Post updatePost = this.postRepo.save(post);
+		Post map = modelMapper.map(postDto, Post.class);
+		map.setPostId(postId);
+		Post updatePost = this.postRepo.save(map);
 		return this.modelMapper.map(updatePost, PostDto.class);
 	}
 

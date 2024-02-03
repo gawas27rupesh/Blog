@@ -34,7 +34,7 @@ public class UserController {
 
 	// POST-create user
 	@PostMapping("/")
-	@PreAuthorize("hasAuthority('ADMIN_USER')")
+	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto) {
 		log.info("Added User");
 		UserDto creUserDto = userService.createUser(userDto);
@@ -43,7 +43,7 @@ public class UserController {
 
 	// PUT- update user//path uri variable
 	@PutMapping("/{userId}")
-	@PreAuthorize("hasAuthority('ADMIN_USER')")
+	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto,
 			@PathVariable("userId") Integer userId) {
 		log.info("Update User");
@@ -53,7 +53,7 @@ public class UserController {
 
 	// only ADMIN can delete
 	// DELETE -delete user
-	@PreAuthorize("hasAuthority('ADMIN_USER')")
+	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	@DeleteMapping("/{userId}")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable("userId") Integer uid) {
 		log.info("Delete User");

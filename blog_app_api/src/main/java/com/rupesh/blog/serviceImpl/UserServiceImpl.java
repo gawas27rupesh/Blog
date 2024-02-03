@@ -37,7 +37,9 @@ public class UserServiceImpl implements UserService {
 	@Cacheable("blogCache")
 	public UserDto createUser(UserDto userDto) {
 		log.info("Service Implementation");
-		User savedUser = userRepo.save(this.modelMapper.map(userDto, User.class));
+		User map = modelMapper.map(userDto, User.class);
+		map.setPassword(this.passwordEncoder.encode(userDto.getPassword()));
+		User savedUser = userRepo.save(map);
 		return this.modelMapper.map(savedUser, UserDto.class);
 	}
 

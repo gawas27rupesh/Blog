@@ -10,3 +10,17 @@
 2024-02-04 12:39:35.578  INFO 4228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2024-02-04 12:39:35.860  INFO 4228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 2024-02-04 12:39:40.853  INFO 4228 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 10.866 seconds (JVM running for 12.711)
+2024-02-04 13:48:35.391  INFO 9120 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 9120 (C:\Users\Admin\git\BlogApp\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\BlogApp\blog_app_api)
+2024-02-04 13:48:35.394  INFO 9120 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-02-04 13:48:38.469  INFO 9120 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-02-04 13:48:38.469  INFO 9120 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-02-04 13:48:38.470  INFO 9120 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-02-04 13:48:38.477  INFO 9120 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-02-04 13:48:38.489  INFO 9120 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-04 13:48:38.489  INFO 9120 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-02-04 13:48:38.841  INFO 9120 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-02-04 13:48:39.462  INFO 9120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-04 13:48:39.681  INFO 9120 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-04 13:48:44.196  INFO 9120 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 9.421 seconds (JVM running for 11.017)
+2024-02-04 13:49:53.676  INFO 9120 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-02-04 13:49:53.687  INFO 9120 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

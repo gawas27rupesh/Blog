@@ -1,7 +1,6 @@
 package com.rupesh.blog.dto;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,8 +14,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class PostDto implements Serializable{
-	
-	
 	/**
 	 * 
 	 */
@@ -30,7 +27,7 @@ public class PostDto implements Serializable{
 	
 	private String imageName;
 	
-	private Date addedDate;
+	private String addedDate;
 	
 	private CategoryDto category;
 	

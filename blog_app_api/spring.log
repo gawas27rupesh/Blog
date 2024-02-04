@@ -1,7 +1,12 @@
-2024-01-09 18:15:31.540  INFO 12300 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 1.8.0_281 on RNT-PUN-1310 with PID 12300 (C:\Users\Rupesh Gawas\git\BlogApplication\blog_app_api\target\classes started by Rupesh Gawas in C:\Users\Rupesh Gawas\git\BlogApplication\blog_app_api)
-2024-01-09 18:15:31.540  INFO 12300 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
-2024-01-09 18:15:31.840  INFO 12300 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-09 18:15:31.841  INFO 12300 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2024-01-09 18:15:31.852  INFO 12300 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-09 18:15:31.886  INFO 12300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2024-01-09 18:15:31.890  INFO 12300 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-02-04 12:39:30.712  INFO 4228 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 4228 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-02-04 12:39:30.721  INFO 4228 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-02-04 12:39:34.341  INFO 4228 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-02-04 12:39:34.342  INFO 4228 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-02-04 12:39:34.344  INFO 4228 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-02-04 12:39:34.366  INFO 4228 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-02-04 12:39:34.380  INFO 4228 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-04 12:39:34.380  INFO 4228 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-02-04 12:39:34.770  INFO 4228 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-02-04 12:39:35.578  INFO 4228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-04 12:39:35.860  INFO 4228 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-04 12:39:40.853  INFO 4228 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 10.866 seconds (JVM running for 12.711)

@@ -18,14 +18,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "comment")
-public class Comment implements Serializable{
+public class Comment implements Serializable {
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -3644113900192619571L;
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int commentId;
+	
 	private String content;
 	
 	@ManyToOne

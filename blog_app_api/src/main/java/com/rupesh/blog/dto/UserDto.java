@@ -16,8 +16,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserDto implements Serializable{
-	
-
 	/**
 	 * 
 	 */

@@ -1,8 +1,5 @@
 package com.rupesh.blog.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,45 +19,36 @@ import com.rupesh.blog.exceptions.ApiException;
 import com.rupesh.blog.security.JwtTokenHelper;
 import com.rupesh.blog.services.UserService;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@RestController
 @Slf4j
+@RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/auth")
 public class AuthController {
 
-	@Autowired
-	private UserDetailsService userDetailsService;
-
-	@Autowired
-	private AuthenticationManager authenticationManager;
-
-	@Autowired
-	private JwtTokenHelper jwtTokenHelper;
-	
-	@Autowired
-	private UserService userService;
-
-	private Logger logger = LoggerFactory.getLogger(AuthController.class);
+	private final UserDetailsService userDetailsService;
+	private final AuthenticationManager authenticationManager;
+	private final JwtTokenHelper jwtTokenHelper;
+	private final UserService userService;
 
 	@PostMapping("/login")
 	public ResponseEntity<JwtAuthResponse> createToken(@RequestBody JwtAuthRequest request) {
+		log.info("");
 		this.authenticate(request.getUsername(), request.getPassword());
-		UserDetails userDetails = this.userDetailsService.loadUserByUsername(request.getUsername());
-		String token = this.jwtTokenHelper.generateToken(userDetails);
-
-//      JwtAuthRequest response = JwtResponse.builder().jwtToken(token).username(userDetails.getUsername()).build();
-
+		UserDetails userDetails = userDetailsService.loadUserByUsername(request.getUsername());
+		String token = jwtTokenHelper.generateToken(userDetails);
 		JwtAuthResponse response = new JwtAuthResponse();
 		response.setToken(token);
-		return new ResponseEntity<JwtAuthResponse>(response, HttpStatus.OK);
+		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
 	private void authenticate(String username, String password) {
 		UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(username,
 				password);
 		try {
-			this.authenticationManager.authenticate(authentication);
+			authenticationManager.authenticate(authentication);
 		} catch (BadCredentialsException e) {
 			throw new ApiException(" Invalid Username or Password...!!!");
 		}
@@ -68,7 +56,7 @@ public class AuthController {
 
 	@PostMapping("/register")
 	public ResponseEntity<UserDto> registerUser(@RequestBody UserDto userDto) {
-		UserDto registerNewUser = this.userService.registerNewUser(userDto);
-		return new ResponseEntity<UserDto>(registerNewUser,HttpStatus.CREATED) ;
+		UserDto registerNewUser = userService.registerNewUser(userDto);
+		return new ResponseEntity<>(registerNewUser, HttpStatus.CREATED);
 	}
 }

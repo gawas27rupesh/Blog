@@ -12,8 +12,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApiResponse implements Serializable{
-	
-	
 	/**
 	 * 
 	 */

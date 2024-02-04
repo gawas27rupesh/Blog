@@ -1,0 +1,278 @@
+2024-01-29 09:14:21.517  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 2412 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:14:21.523  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:14:24.554  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:14:24.555  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:14:24.556  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:14:24.576  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:14:24.590  INFO 2412 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:14:24.590  INFO 2412 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:14:24.764  INFO 2412 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:14:25.634  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-29 09:14:25.824  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-29 09:14:30.318  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:14:30.319  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:14:30.324  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 9.371 seconds (JVM running for 10.485)
+2024-01-29 09:15:20.621  INFO 2412 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:15:20.729  INFO 2412 --- [http-nio-8080-exec-2] c.rupesh.blog.controller.AuthController  : 
+2024-01-29 09:16:58.992  INFO 2412 --- [http-nio-8080-exec-6] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:16:58.997  INFO 2412 --- [http-nio-8080-exec-6] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:18:04.321  INFO 2412 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-29 09:18:04.379  INFO 2412 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-29 09:18:04.592  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 2412 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:18:04.592  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:18:06.438  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:18:06.439  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:18:06.439  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:18:06.440  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:18:06.441  INFO 2412 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:18:06.441  INFO 2412 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:18:06.488  INFO 2412 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:18:06.606  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-01-29 09:18:06.613  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-01-29 09:18:08.260  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:18:08.261  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:18:08.262  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 3.762 seconds (JVM running for 228.424)
+2024-01-29 09:18:24.430  INFO 2412 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:18:24.476  INFO 2412 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:18:24.480  INFO 2412 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:19:31.859  INFO 2412 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-01-29 09:19:31.863  INFO 2412 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-01-29 09:19:32.017  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 2412 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:19:32.017  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:19:32.675  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:19:32.675  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:19:32.676  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:19:32.676  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:19:32.678  INFO 2412 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:19:32.678  INFO 2412 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:19:32.730  INFO 2412 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:19:32.825  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-01-29 09:19:32.830  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-01-29 09:19:34.178  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:19:34.178  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:19:34.179  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.213 seconds (JVM running for 314.341)
+2024-01-29 09:19:39.445  INFO 2412 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:19:39.488  INFO 2412 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:19:39.492  INFO 2412 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:23:05.875  INFO 2412 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-01-29 09:23:06.018  INFO 2412 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-01-29 09:23:06.333  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 2412 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:23:06.333  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:23:07.053  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:23:07.053  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:23:07.053  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:23:07.054  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:23:07.055  INFO 2412 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:23:07.055  INFO 2412 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:23:07.088  INFO 2412 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:23:07.178  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-01-29 09:23:07.184  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-01-29 09:23:08.418  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:23:08.418  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:23:08.419  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.153 seconds (JVM running for 528.581)
+2024-01-29 09:24:00.415  INFO 2412 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-01-29 09:24:00.470  INFO 2412 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-01-29 09:24:00.664  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 2412 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:24:00.665  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:24:02.530  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:24:02.531  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:24:02.532  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:24:02.533  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:24:02.534  INFO 2412 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:24:02.534  INFO 2412 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:24:02.590  INFO 2412 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:24:02.755  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-01-29 09:24:02.761  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-01-29 09:24:04.353  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:24:04.354  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:24:04.355  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 3.784 seconds (JVM running for 584.516)
+2024-01-29 09:25:34.532  INFO 2412 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:25:34.578  INFO 2412 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:25:34.583  INFO 2412 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:26:51.448  INFO 2412 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-01-29 09:26:51.455  INFO 2412 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-01-29 09:26:51.591  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 2412 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:26:51.591  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:26:52.231  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:26:52.232  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:26:52.232  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:26:52.232  INFO 2412 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:26:52.233  INFO 2412 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:26:52.233  INFO 2412 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:26:52.267  INFO 2412 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:26:52.369  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-01-29 09:26:52.373  INFO 2412 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-01-29 09:26:53.730  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:26:53.730  WARN 2412 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:26:53.731  INFO 2412 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.186 seconds (JVM running for 753.892)
+2024-01-29 09:26:58.269  INFO 2412 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:26:58.313  INFO 2412 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:26:58.317  INFO 2412 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:27:05.086  INFO 2412 --- [http-nio-8080-exec-3] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:27:05.086  INFO 2412 --- [http-nio-8080-exec-3] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:27:20.733  INFO 2412 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-01-29 09:27:20.736  INFO 2412 --- [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-01-29 09:27:23.336  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5784 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:27:23.338  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:27:26.011  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:27:26.012  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:27:26.013  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:27:26.019  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:27:26.031  INFO 5784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:27:26.031  INFO 5784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:27:26.192  INFO 5784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:27:26.790  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-29 09:27:26.964  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-29 09:27:31.526  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:27:31.527  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:27:31.533  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 8.702 seconds (JVM running for 9.65)
+2024-01-29 09:27:38.891  INFO 5784 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-29 09:27:38.906  INFO 5784 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-29 09:27:39.060  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5784 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:27:39.061  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:27:39.862  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:27:39.862  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:27:39.863  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:27:39.863  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:27:39.864  INFO 5784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:27:39.864  INFO 5784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:27:39.904  INFO 5784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:27:39.998  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-01-29 09:27:40.003  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-01-29 09:27:41.294  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:27:41.295  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:27:41.297  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.302 seconds (JVM running for 19.414)
+2024-01-29 09:27:57.658  INFO 5784 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:27:58.011  INFO 5784 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:27:58.015  INFO 5784 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:28:20.775  INFO 5784 --- [http-nio-8080-exec-3] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:28:20.775  INFO 5784 --- [http-nio-8080-exec-3] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:29:12.777  INFO 5784 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-01-29 09:29:12.786  INFO 5784 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-01-29 09:29:13.050  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5784 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:29:13.051  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:29:13.789  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:29:13.790  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:29:13.790  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:29:13.790  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:29:13.791  INFO 5784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:29:13.792  INFO 5784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:29:13.832  INFO 5784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:29:13.922  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-01-29 09:29:13.928  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-01-29 09:29:15.175  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:29:15.176  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:29:15.177  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.259 seconds (JVM running for 113.295)
+2024-01-29 09:29:24.038  INFO 5784 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:29:24.084  INFO 5784 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:29:24.088  INFO 5784 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:30:09.050  INFO 5784 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-01-29 09:30:09.057  INFO 5784 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-01-29 09:30:09.185  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5784 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:30:09.185  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:30:09.821  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:30:09.821  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:30:09.821  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:30:09.821  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:30:09.822  INFO 5784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:30:09.822  INFO 5784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:30:09.868  INFO 5784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:30:09.967  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-01-29 09:30:09.973  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-01-29 09:30:11.237  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:30:11.239  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:30:11.240  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.09 seconds (JVM running for 169.358)
+2024-01-29 09:30:20.108  INFO 5784 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:30:20.152  INFO 5784 --- [http-nio-8080-exec-1] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:30:20.158  INFO 5784 --- [http-nio-8080-exec-1] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:30:51.113  INFO 5784 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-01-29 09:30:51.117  INFO 5784 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-01-29 09:30:51.237  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5784 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:30:51.238  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:30:51.857  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:30:51.857  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:30:51.857  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:30:51.858  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:30:51.859  INFO 5784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:30:51.859  INFO 5784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:30:51.893  INFO 5784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:30:51.977  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-01-29 09:30:51.982  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-01-29 09:30:53.154  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:30:53.154  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:30:53.155  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 1.956 seconds (JVM running for 211.273)
+2024-01-29 09:31:02.428  INFO 5784 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:31:02.481  INFO 5784 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:31:02.486  INFO 5784 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:31:36.179  INFO 5784 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-01-29 09:31:36.185  INFO 5784 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-01-29 09:31:36.309  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5784 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:31:36.310  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:31:37.013  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:31:37.013  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:31:37.013  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:31:37.014  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:31:37.016  INFO 5784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:31:37.017  INFO 5784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:31:37.060  INFO 5784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:31:37.134  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-01-29 09:31:37.139  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-01-29 09:31:38.291  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:31:38.292  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:31:38.292  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 2.024 seconds (JVM running for 256.41)
+2024-01-29 09:31:49.311  INFO 5784 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:31:49.353  INFO 5784 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:31:49.357  INFO 5784 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:32:09.934  INFO 5784 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-01-29 09:32:09.937  INFO 5784 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-01-29 09:32:10.052  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5784 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:32:10.052  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:32:10.680  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:32:10.681  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:32:10.681  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:32:10.681  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:32:10.682  INFO 5784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:32:10.682  INFO 5784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:32:10.715  INFO 5784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:32:10.794  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2024-01-29 09:32:10.799  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2024-01-29 09:32:11.944  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:32:11.945  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:32:11.946  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 1.929 seconds (JVM running for 290.064)
+2024-01-29 09:52:52.192  INFO 5784 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2024-01-29 09:52:52.196  INFO 5784 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2024-01-29 09:52:52.342  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5784 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:52:52.343  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:52:53.107  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:52:53.108  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:52:53.108  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:52:53.109  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:52:53.110  INFO 5784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:52:53.110  INFO 5784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:52:53.142  INFO 5784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:52:53.233  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2024-01-29 09:52:53.237  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2024-01-29 09:52:55.613  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:52:55.614  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:52:55.615  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 3.315 seconds (JVM running for 1533.733)
+2024-01-29 09:52:56.916  INFO 5784 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2024-01-29 09:52:56.921  INFO 5784 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2024-01-29 09:52:57.056  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Starting BlogAppApiApplication using Java 18.0.2 on DESKTOP-VIE80H8 with PID 5784 (C:\Users\Admin\git\Blog\blog_app_api\target\classes started by Admin in C:\Users\Admin\git\Blog\blog_app_api)
+2024-01-29 09:52:57.057  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : The following 1 profile is active: "local"
+2024-01-29 09:52:57.663  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-01-29 09:52:57.663  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-01-29 09:52:57.663  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-01-29 09:52:57.663  INFO 5784 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-01-29 09:52:57.664  INFO 5784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-29 09:52:57.664  INFO 5784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2024-01-29 09:52:57.697  INFO 5784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring embedded WebApplicationContext
+2024-01-29 09:52:57.776  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2024-01-29 09:52:57.780  INFO 5784 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2024-01-29 09:52:58.964  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : All previous cache destroyed
+2024-01-29 09:52:58.966  WARN 5784 --- [restartedMain] c.r.blog.config.CacheEvictionOnStartup   : Data removed form cache....
+2024-01-29 09:52:58.968  INFO 5784 --- [restartedMain] com.rupesh.blog.BlogAppApiApplication    : Started BlogAppApiApplication in 1.947 seconds (JVM running for 1537.085)
+2024-01-29 09:53:27.185  INFO 5784 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/blog]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-29 09:53:27.226  INFO 5784 --- [http-nio-8080-exec-2] c.r.blog.controller.CategoryController   : Update Category
+2024-01-29 09:53:27.229  INFO 5784 --- [http-nio-8080-exec-2] c.r.b.serviceImpl.CategorySarviceImpl    : Service Implementation
+2024-01-29 09:54:54.572  INFO 5784 --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2024-01-29 09:54:54.577  INFO 5784 --- [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.

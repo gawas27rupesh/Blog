@@ -52,8 +52,8 @@ public class AmazonClient {
 	@Value("${aws.client.secretKey}")
 	private String secretKey;
 
-	@Value("${gawas27}")
-	private String gawas27;
+	@Value("${BlogFolderName}")
+	private String blogFolderName;
 
 	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 	LocalDate localDate = LocalDate.now();
@@ -72,8 +72,8 @@ public class AmazonClient {
 		try {
 			File file = convertMultiPartToFile(multipartFile);
 			String fileName = generateFileName(multipartFile);
-			String s3ObjectKey = gawas27 + "/" + fileName;
-			fileUrl = endpointUrl + "/" + gawas27 + "/" + fileName;
+			String s3ObjectKey = blogFolderName + "/" + fileName;
+			fileUrl = endpointUrl + "/" + blogFolderName + "/" + fileName;
 			uploadFileTos3bucket(fileName, file);
 			if (!file.delete()) {
 				log.error("error while uploading images");
@@ -111,7 +111,7 @@ public class AmazonClient {
 	
 	private PutObjectResult uploadFileTos3bucket(String fileName, File file) {
 		try {
-			String s3ObjectKey = gawas27 + "/" + fileName;
+			String s3ObjectKey = blogFolderName + "/" + fileName;
 		    return s3client.putObject(new PutObjectRequest(bucketName, s3ObjectKey, file));
 		}catch(Exception e) {
 			log.error("error uploading request to S3 : ",e);
@@ -122,7 +122,7 @@ public class AmazonClient {
 	public Map<String, Object> getImagesFromS3(String objectKey){
 		Map<String, Object> map = new HashMap<>();
 		try{
-			 String s3ObjectKey = gawas27 + "/" +objectKey;
+			 String s3ObjectKey = blogFolderName + "/" +objectKey;
 			 System.out.println("bucketname : "+bucketName+"\tFileName : "+s3ObjectKey);
 			 S3Object s3Object = s3client.getObject(new GetObjectRequest(bucketName, s3ObjectKey));
 			 byte[] objectContent = IOUtils.toByteArray(s3Object.getObjectContent());
@@ -137,7 +137,7 @@ public class AmazonClient {
 	
 	public String deleteImageFromS3(String filename){
 		try {
-			String s3ObjectKey = gawas27 + "/" +filename;
+			String s3ObjectKey = blogFolderName + "/" +filename;
 			System.out.println("bucketname : "+bucketName+"\tFileName : "+s3ObjectKey);
 			s3client.deleteObject(bucketName, s3ObjectKey);
 			return "success";
@@ -150,7 +150,7 @@ public class AmazonClient {
 	public List<String> listFileFromS3Bucket() {
 		List<String> keyList = new ArrayList<>();
 		try {
-			ListObjectsV2Request req = new ListObjectsV2Request().withBucketName(bucketName).withPrefix(gawas27)
+			ListObjectsV2Request req = new ListObjectsV2Request().withBucketName(bucketName).withPrefix(blogFolderName)
 					.withMaxKeys(2);
 			ListObjectsV2Result result;
 			do {

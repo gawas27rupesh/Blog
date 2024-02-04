@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 @Lazy
 @RestController
-@RequestMapping("/api/v1/aws")
+@RequestMapping("/aws")
 @RequiredArgsConstructor
 public class AwsRestController {
 	

@@ -6,12 +6,16 @@ import java.util.Set;
 
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 public class PostDto implements Serializable{
 	/**
@@ -27,6 +31,10 @@ public class PostDto implements Serializable{
 	
 	private String imageName;
 	
+	private byte[] image;
+	
+	private String objectKey;
+	
 	private String addedDate;
 	
 	private CategoryDto category;
@@ -34,6 +42,6 @@ public class PostDto implements Serializable{
 	private UserDto user;
 	
 	private Set<CommentDto> comments=new HashSet<>();
-	
+
 	
 }

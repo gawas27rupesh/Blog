@@ -1,36 +1,23 @@
 package com.rupesh.blog.services;
 
+import java.io.IOException;
 import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.rupesh.blog.dto.PostDto;
 import com.rupesh.blog.dto.PostResponse;
 
 public interface PostService {
-	//create
-	PostDto createPost(PostDto postDto,Integer userId,Integer categoryId);
-	
 	//update
 	PostDto updatePost(PostDto postDto,Integer postId);
 	
 	//delete
 	void deletePost(Integer PostId);
 	
-	//get all posts
-	//PostResponse getAllPost(Integer pageNumber,Integer pageSize);
-	
 	//get single posts
 	PostDto getPostById(Integer postId);
 	
-	//get all post by category
-	//List<PostDto> getPostsByCategory(Integer categoryId);
-	
-	//get all post by user
-	//List<PostDto> getPostsByUSer(Integer userId);
-	
-	//search posts
-	List<PostDto> searchPosts(String keyword);
-
-
 	PostResponse getPostsByCategory(Integer categoryId, Integer pageNumber, Integer pageize);
 
 	PostResponse getPostsByUSer(Integer userId, Integer pageNumber, Integer pageize);
@@ -38,6 +25,8 @@ public interface PostService {
 	List<PostDto> getAllPost();
 
 	PostResponse getAllPost(Integer pageNumber, Integer pageize, String sortBy, String sortDir);
+
+	PostDto createPost(PostDto createPost, MultipartFile file, Integer userId, Integer categoryId) throws IOException;
 	
 	
 }

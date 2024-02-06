@@ -92,11 +92,9 @@ public class PostServiceImpl implements PostService {
 	public PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
 		log.info("Service Implementation");
 		Sort sort = (sortDir.equalsIgnoreCase("asc")) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
-		Pageable p = PageRequest.of(pageNumber, pageSize, sort);// imp:- Sort.by(sortBy).descending();// bydefault
-																// ascending
+		Pageable p = PageRequest.of(pageNumber, pageSize, sort);
 		Page<Post> pagePost = this.postRepo.findAll(p);
 		List<Post> allPosts = pagePost.getContent();
-
 		
 		List<PostDto> postDtos = allPosts.stream().map(post -> {
 			PostDto postDto = this.modelMapper.map(post, PostDto.class);
@@ -115,15 +113,15 @@ public class PostServiceImpl implements PostService {
 		return postResponse;
 	}
 
-	@Override
-	@Cacheable("blogCache")
-	public List<PostDto> getAllPost() {
-		log.info("Service Implementation");
-		List<Post> pagePost = this.postRepo.findAll();
-		List<PostDto> postDtos = pagePost.stream().map((post) -> this.modelMapper.map(post, PostDto.class))
-				.collect(Collectors.toList());
-		return postDtos;
-	}
+//	@Override
+//	@Cacheable("blogCache")
+//	public List<PostDto> getAllPost() {
+//		log.info("Service Implementation");
+//		List<Post> pagePost = this.postRepo.findAll();
+//		List<PostDto> postDtos = pagePost.stream().map(post -> this.modelMapper.map(post, PostDto.class))
+//				.collect(Collectors.toList());
+//		return postDtos;
+//	}
 
 	
 	@Override
@@ -146,8 +144,14 @@ public class PostServiceImpl implements PostService {
 		Category category = this.categoryRepo.findById(categoryId)
 				.orElseThrow(() -> new ResourceNotFoundException("Category", "category id", categoryId));
 		Page<Post> pagePost = this.postRepo.findByCategory(category, p);
-		List<PostDto> postDtos = pagePost.stream().map((post) -> this.modelMapper.map(post, PostDto.class))
-				.collect(Collectors.toList());
+		
+		List<PostDto> postDtos = pagePost.stream().map(dev->{
+			PostDto map = modelMapper.map(dev, PostDto.class);
+			Map<String, Object> imagesFromS3 = s3Client.getImagesFromS3(dev.getObjectKey());
+			map.setImage((byte[]) imagesFromS3.get("Data2"));
+			return map;
+		}).collect(Collectors.toList());
+		
 		PostResponse postResponse = new PostResponse();
 		postResponse.setContent(postDtos);
 		postResponse.setPageNumber(pagePost.getNumber());
@@ -166,8 +170,9 @@ public class PostServiceImpl implements PostService {
 		User user = this.userRepo.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("User", "user id", userId));
 		Page<Post> pagePost = this.postRepo.findByUser(user, p);
-		List<PostDto> postDtos = pagePost.stream().map((post) -> this.modelMapper.map(post, PostDto.class))
-				.collect(Collectors.toList());
+		
+		List<PostDto> postDtos = pagePost.stream().map(post -> modelMapper.map(post, PostDto.class)).collect(Collectors.toList());
+		
 		PostResponse postResponse = new PostResponse();
 		postResponse.setContent(postDtos);
 		postResponse.setPageNumber(pagePost.getNumber());

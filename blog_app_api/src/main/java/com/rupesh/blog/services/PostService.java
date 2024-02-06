@@ -1,7 +1,6 @@
 package com.rupesh.blog.services;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,7 +21,7 @@ public interface PostService {
 
 	PostResponse getPostsByUSer(Integer userId, Integer pageNumber, Integer pageize);
 
-	List<PostDto> getAllPost();
+	//List<PostDto> getAllPost();
 
 	PostResponse getAllPost(Integer pageNumber, Integer pageize, String sortBy, String sortDir);
 

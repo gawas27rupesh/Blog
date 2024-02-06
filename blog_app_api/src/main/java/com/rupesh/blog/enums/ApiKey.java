@@ -2,7 +2,7 @@ package com.rupesh.blog.enums;
 
 public enum ApiKey {
 	
-	MESSAGE("message"), SUCCESS("SUCCESS");
+	MESSAGE("message"), SUCCESS("SUCCESS"), DATA("DATA");
 
 	String value;
 	

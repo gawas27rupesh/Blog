@@ -1,6 +1,14 @@
 package com.rupesh.blog.controller;
 
+import static com.rupesh.blog.enums.ApiKey.DATA;
+import static com.rupesh.blog.enums.ApiKey.SUCCESS;
+import static org.springframework.http.ResponseEntity.created;
+import static org.springframework.http.ResponseEntity.ok;
+import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentContextPath;
+
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -18,6 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rupesh.blog.dto.ApiResponse;
 import com.rupesh.blog.dto.CategoryDto;
 import com.rupesh.blog.entities.Category;
+import com.rupesh.blog.enums.ApiKey;
 import com.rupesh.blog.services.CategoryService;
 
 import lombok.RequiredArgsConstructor;
@@ -31,41 +40,74 @@ public class CategoryController {
 
 	private final CategoryService categoryService;
 
-	@PostMapping//ok
-	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
-		log.info("Create Category");
-		CategoryDto createCategoryDto = categoryService.createCategory(categoryDto);
-		return new ResponseEntity<>(createCategoryDto, HttpStatus.CREATED);
-
+	@PostMapping
+	public ResponseEntity<EnumMap<ApiKey, Object>> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Create Category");
+			CategoryDto createCategoryDto = categoryService.createCategory(categoryDto);
+			map.put(DATA, createCategoryDto);
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.error("Category add Error.");
+		}
+		return created(fromCurrentContextPath().build().toUri()).body(map);
 	}
 
 	@PutMapping("/{categoryId}")//ok
-	public ResponseEntity<CategoryDto> updateUser(@Valid @RequestBody CategoryDto categoryDto,
+	public ResponseEntity<EnumMap<ApiKey, Object>> updateUser(@Valid @RequestBody CategoryDto categoryDto,
 			@PathVariable("categoryId") Integer categoryId) {
-		log.info("Update Category");
-		CategoryDto updateCategory = categoryService.updateCategory(categoryDto,categoryId);
-		return ResponseEntity.ok(updateCategory);
-
+		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Update Category");
+			CategoryDto updateCategory = categoryService.updateCategory(categoryDto,categoryId);
+			map.put(DATA, updateCategory);
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.error("Error Update Category");
+		}
+		return ResponseEntity.ok(map);
 	}
 
-	@DeleteMapping("/{categoryId}")//ok
-	public ResponseEntity<ApiResponse> deleteCategory(@PathVariable("categoryId") Integer categoryId) {
-		log.info("Delete Category");
-		categoryService.deleteCategory(categoryId);
-		return new ResponseEntity<>(new ApiResponse("Category deleted Successfully", true), HttpStatus.OK);
+	@DeleteMapping("/{categoryId}")
+	public ResponseEntity<EnumMap<ApiKey, Object>> deleteCategory(@PathVariable("categoryId") Integer categoryId) {
+		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Delete Category");
+			categoryService.deleteCategory(categoryId);
+			map.put(DATA, "Category deleted Successfully");
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.error("Error Delete Category");
+		}
+		return ResponseEntity.ok(map);
 	}
 
-	@GetMapping("/{categoryId}")//ok
-	public ResponseEntity<Category> getCategory(@Valid @PathVariable("categoryId") Integer categoryId) {
-		log.info("Fetch Category");
-		Category getCat = categoryService.getCategory(categoryId);
-		return new ResponseEntity<>(getCat, HttpStatus.OK);
+	@GetMapping("/{categoryId}")
+	public ResponseEntity<Map<ApiKey, Object>> getCategory(@Valid @PathVariable("categoryId") Integer categoryId) {
+		Map<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Fetch Category");
+			Category getCat = categoryService.getCategory(categoryId);
+			map.put(DATA, getCat);
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.error("Error Fetch Category");
+		}
+		return ResponseEntity.ok(map);
 	}
 
-	@GetMapping//ok
-	public ResponseEntity<List<CategoryDto>> getAllCategory() {
-		log.info("Fetch All Category");
-		List<CategoryDto> allCat = categoryService.getCategories();
-		return ResponseEntity.ok(allCat);
+	@GetMapping
+	public ResponseEntity<EnumMap<ApiKey, Object>> getAllCategory() {
+		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Fetch All Category");
+			List<CategoryDto> allCat = categoryService.getCategories();
+			map.put(DATA, allCat);
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.info("Error Fetch All Category");
+		}
+		return ResponseEntity.ok(map);
 	}
 }

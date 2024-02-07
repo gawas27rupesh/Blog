@@ -32,7 +32,6 @@ public class UserController {
 
 	private final UserService userService;
 
-	// POST-create user
 	@PostMapping("/")
 	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto userDto) {
@@ -41,7 +40,6 @@ public class UserController {
 		return new ResponseEntity<>(creUserDto, HttpStatus.CREATED);
 	}
 
-	// PUT- update user//path uri variable
 	@PutMapping("/{userId}")
 	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	public ResponseEntity<UserDto> updateUser(@Valid @RequestBody UserDto userDto,
@@ -51,8 +49,6 @@ public class UserController {
 		return ResponseEntity.ok(updateUser);
 	}
 
-	// only ADMIN can delete
-	// DELETE -delete user
 	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	@DeleteMapping("/{userId}")
 	public ResponseEntity<ApiResponse> deleteUser(@PathVariable("userId") Integer uid) {
@@ -61,7 +57,6 @@ public class UserController {
 		return new ResponseEntity<>(new ApiResponse("User deleted Successfully", true), HttpStatus.OK);
 	}
 
-	// GET- All user get
 	@GetMapping("/")
 	@ResponseBody
 	public ResponseEntity<List<UserDto>> getAllUsers() {
@@ -69,7 +64,6 @@ public class UserController {
 		return ResponseEntity.ok(userService.getAllUsers());
 	}
 
-	// GET- user get
 	@GetMapping("/{userId}")
 	public ResponseEntity<UserDto> getSingleUser(@PathVariable("userId") Integer userId) {
 		log.info("Fetch User");

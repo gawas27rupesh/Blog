@@ -3,7 +3,6 @@ package com.rupesh.blog.controller;
 import static com.rupesh.blog.enums.ApiKey.DATA;
 import static com.rupesh.blog.enums.ApiKey.SUCCESS;
 import static org.springframework.http.ResponseEntity.created;
-import static org.springframework.http.ResponseEntity.ok;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentContextPath;
 
 import java.util.EnumMap;
@@ -12,7 +11,6 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rupesh.blog.dto.ApiResponse;
 import com.rupesh.blog.dto.CategoryDto;
 import com.rupesh.blog.entities.Category;
 import com.rupesh.blog.enums.ApiKey;
@@ -54,7 +51,7 @@ public class CategoryController {
 		return created(fromCurrentContextPath().build().toUri()).body(map);
 	}
 
-	@PutMapping("/{categoryId}")//ok
+	@PutMapping("/{categoryId}")
 	public ResponseEntity<EnumMap<ApiKey, Object>> updateUser(@Valid @RequestBody CategoryDto categoryDto,
 			@PathVariable("categoryId") Integer categoryId) {
 		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);

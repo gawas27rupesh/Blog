@@ -1,6 +1,13 @@
 package com.rupesh.blog.controller;
 
-import org.springframework.http.HttpStatus;
+import static com.rupesh.blog.enums.ApiKey.DATA;
+import static com.rupesh.blog.enums.ApiKey.MESSAGE;
+import static com.rupesh.blog.enums.ApiKey.SUCCESS;
+import static org.springframework.http.ResponseEntity.created;
+import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentContextPath;
+
+import java.util.EnumMap;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rupesh.blog.dto.ApiResponse;
 import com.rupesh.blog.dto.CommentDto;
+import com.rupesh.blog.enums.ApiKey;
 import com.rupesh.blog.services.CommentService;
 
 import lombok.RequiredArgsConstructor;
@@ -25,16 +32,30 @@ public class CommentController {
 	private final CommentService commentService;
 
 	@PostMapping("/{postId}/comments")
-	public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto, @PathVariable Integer postId) {
-		log.info("Create Comment");
-		CommentDto createComment = commentService.createComment(commentDto, postId);
-		return new ResponseEntity<>(createComment, HttpStatus.CREATED);
+	public ResponseEntity<EnumMap<ApiKey, Object>> createComment(@RequestBody CommentDto commentDto, @PathVariable Integer postId) {
+		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		try {
+			CommentDto createComment = commentService.createComment(commentDto, postId);
+			map.put(DATA, createComment);
+			map.put(SUCCESS, true);
+			log.info("Create Comment");
+		} catch (Exception e) {
+			log.error("Error Create Comment");
+		}
+		return created(fromCurrentContextPath().build().toUri()).body(map);
 	}
 
 	@DeleteMapping("/{commentId}")
-	public ResponseEntity<ApiResponse> deleteComment(@PathVariable Integer commentId) {
-		log.info("Delete Comment");
-		commentService.deleteComment(commentId);
-		return new ResponseEntity<>(new ApiResponse("Comment Deleted Successfully", true), HttpStatus.OK);
+	public ResponseEntity<EnumMap<ApiKey, Object>> deleteComment(@PathVariable Integer commentId) {
+		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Delete Comment");
+			commentService.deleteComment(commentId);
+			map.put(MESSAGE, "Comment Deleted Successfully");
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.info("Delete Comment");
+		}
+		return ResponseEntity.ok(map);
 	}
 }

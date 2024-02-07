@@ -1,8 +1,12 @@
 package com.rupesh.blog.controller;
 
-import java.io.IOException;
+import static com.rupesh.blog.enums.ApiKey.DATA;
+import static com.rupesh.blog.enums.ApiKey.MESSAGE;
+import static com.rupesh.blog.enums.ApiKey.SUCCESS;
 
-import org.springframework.http.HttpStatus;
+import java.io.IOException;
+import java.util.EnumMap;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,9 +21,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rupesh.blog.config.AppConstants;
-import com.rupesh.blog.dto.ApiResponse;
 import com.rupesh.blog.dto.PostDto;
-import com.rupesh.blog.dto.PostResponse;
+import com.rupesh.blog.enums.ApiKey;
 import com.rupesh.blog.services.PostService;
 
 import lombok.RequiredArgsConstructor;
@@ -34,70 +37,107 @@ public class PostController {
 	private final PostService postService;
 	private final ObjectMapper mapper;
 
-	// create
 	@PostMapping(value = "/user/{userId}/category/{categoryId}/posts")
-	public ResponseEntity<PostDto> createPost(@RequestParam("image") MultipartFile file,
+	public ResponseEntity<EnumMap<ApiKey, Object>> createPost(@RequestParam("image") MultipartFile file,
 			@RequestParam("userData") String userData, @PathVariable Integer userId, @PathVariable Integer categoryId)
 			throws IOException {
-		PostDto createPost = mapper.readValue(userData, PostDto.class);
-		log.info("Create Post");
-		PostDto createPost1 = postService.createPost(createPost,file, userId, categoryId);
-		return new ResponseEntity<>(createPost1, HttpStatus.CREATED);
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Create Post");
+			PostDto createPost = mapper.readValue(userData, PostDto.class);
+			map.put(DATA, postService.createPost(createPost, file, userId, categoryId));
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.error("Error Create Post");
+		}
+		return ResponseEntity.ok(map);
 	}
 
 	@GetMapping("/user/{userId}/posts")
-	public ResponseEntity<PostResponse> getPostByUser(@PathVariable Integer userId,
+	public ResponseEntity<EnumMap<ApiKey, Object>> getPostByUser(@PathVariable Integer userId,
 			@RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
 			@RequestParam(value = "pageSize", defaultValue = "3", required = false) Integer pageize) {
-		log.info("Fetch Post by User");
-		PostResponse posts = postService.getPostsByUSer(userId, pageNumber, pageize);
-		return new ResponseEntity<>(posts, HttpStatus.OK);
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Fetch Post by User");
+			map.put(DATA, postService.getPostsByUSer(userId, pageNumber, pageize));
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.error("Error Fetch Post by User");
+		}
+		return ResponseEntity.ok(map);
 	}
 
-	// get by category
 	@GetMapping("/category/{categoryId}/posts")
-	public ResponseEntity<PostResponse> getPostByCategory(@PathVariable Integer categoryId,
+	public ResponseEntity<EnumMap<ApiKey, Object>> getPostByCategory(@PathVariable Integer categoryId,
 			@RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber,
 			@RequestParam(value = "pageSize", defaultValue = "4", required = false) Integer pageize) {
-		log.info("Fetch Post by Category");
-		PostResponse posts = postService.getPostsByCategory(categoryId, pageNumber, pageize);
-		return new ResponseEntity<>(posts, HttpStatus.OK);
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Fetch Post by Category");
+			map.put(DATA, postService.getPostsByCategory(categoryId, pageNumber, pageize));
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.error("Error Fetch Post by Category");
+		}
+		return ResponseEntity.ok(map);
 	}
 
-	// get all posts
 	@GetMapping
-	public ResponseEntity<PostResponse> getAllPost(
+	public ResponseEntity<EnumMap<ApiKey, Object>> getAllPost(
 			@RequestParam(value = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) Integer pageNumber,
 			@RequestParam(value = "pageSize", defaultValue = AppConstants.PAGE_SIZE, required = false) Integer pageize,
 			@RequestParam(value = "sortBy", defaultValue = AppConstants.SORT_BY, required = false) String sortBy,
 			@RequestParam(value = "sortDir", defaultValue = AppConstants.SORT_DIR, required = false) String sortDir) {
-		log.info("Fetch All Post");
-		PostResponse allPost = postService.getAllPost(pageNumber, pageize, sortBy, sortDir);
-		return new ResponseEntity<>(allPost, HttpStatus.OK);
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Fetch All Post");
+			map.put(DATA, postService.getAllPost(pageNumber, pageize, sortBy, sortDir));
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.error("Error Fetch All Post");
+		}
+		return ResponseEntity.ok(map);
 	}
 
-	// get post details by id
 	@GetMapping("/{postId}")
-	public ResponseEntity<PostDto> getPostById(@PathVariable Integer postId) {
-		log.info("Fetch Post by Post Id");
-		PostDto postDto = postService.getPostById(postId);
-		return new ResponseEntity<>(postDto, HttpStatus.OK);
+	public ResponseEntity<EnumMap<ApiKey, Object>> getPostById(@PathVariable Integer postId) {
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Fetch Post by Post Id");
+			map.put(DATA, postService.getPostById(postId));
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.info("Fetch Post by Post Id");
+		}
+		return ResponseEntity.ok(map);
 	}
 
-	// delete post
 	@DeleteMapping("/{postId}")
-	public ApiResponse deletePost(@PathVariable Integer postId) {
-		log.info("Delete Post");
-		postService.deletePost(postId);
-		return new ApiResponse("Post is successfully deleted !!", true);
+	public ResponseEntity<EnumMap<ApiKey, Object>> deletePost(@PathVariable Integer postId) {
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Delete Post");
+			postService.deletePost(postId);
+			map.put(MESSAGE, "Post is successfully deleted !!");
+		} catch (Exception e) {
+			log.error("Error Delete Post");
+		}
+		return ResponseEntity.ok(map);
 	}
 
-	// update post
 	@PutMapping("/{postId}")
-	public ResponseEntity<PostDto> updatePodt(@RequestBody PostDto postDto, @PathVariable Integer postId) {
-		log.info("Update Post");
-		PostDto updatePost = postService.updatePost(postDto, postId);
-		return new ResponseEntity<>(updatePost, HttpStatus.OK);
+	public ResponseEntity<EnumMap<ApiKey, Object>> updatePodt(@RequestBody PostDto postDto,
+			@PathVariable Integer postId) {
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
+		try {
+			log.info("Update Post");
+			map.put(DATA, postService.updatePost(postDto, postId));
+			map.put(SUCCESS, true);
+		} catch (Exception e) {
+			log.error("Error Update Post");
+		}
+		return ResponseEntity.ok(map);
 	}
 
 }

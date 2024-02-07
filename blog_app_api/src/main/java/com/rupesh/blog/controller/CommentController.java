@@ -32,11 +32,11 @@ public class CommentController {
 	private final CommentService commentService;
 
 	@PostMapping("/{postId}/comments")
-	public ResponseEntity<EnumMap<ApiKey, Object>> createComment(@RequestBody CommentDto commentDto, @PathVariable Integer postId) {
-		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+	public ResponseEntity<EnumMap<ApiKey, Object>> createComment(@RequestBody CommentDto commentDto,
+			@PathVariable Integer postId) {
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
-			CommentDto createComment = commentService.createComment(commentDto, postId);
-			map.put(DATA, createComment);
+			map.put(DATA, commentService.createComment(commentDto, postId));
 			map.put(SUCCESS, true);
 			log.info("Create Comment");
 		} catch (Exception e) {
@@ -47,7 +47,7 @@ public class CommentController {
 
 	@DeleteMapping("/{commentId}")
 	public ResponseEntity<EnumMap<ApiKey, Object>> deleteComment(@PathVariable Integer commentId) {
-		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Delete Comment");
 			commentService.deleteComment(commentId);

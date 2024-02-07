@@ -42,8 +42,7 @@ public class CategoryController {
 		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Create Category");
-			CategoryDto createCategoryDto = categoryService.createCategory(categoryDto);
-			map.put(DATA, createCategoryDto);
+			map.put(DATA, categoryService.createCategory(categoryDto));
 			map.put(SUCCESS, true);
 		} catch (Exception e) {
 			log.error("Category add Error.");
@@ -54,11 +53,10 @@ public class CategoryController {
 	@PutMapping("/{categoryId}")
 	public ResponseEntity<EnumMap<ApiKey, Object>> updateUser(@Valid @RequestBody CategoryDto categoryDto,
 			@PathVariable("categoryId") Integer categoryId) {
-		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Update Category");
-			CategoryDto updateCategory = categoryService.updateCategory(categoryDto,categoryId);
-			map.put(DATA, updateCategory);
+			map.put(DATA, categoryService.updateCategory(categoryDto, categoryId));
 			map.put(SUCCESS, true);
 		} catch (Exception e) {
 			log.error("Error Update Category");
@@ -68,7 +66,7 @@ public class CategoryController {
 
 	@DeleteMapping("/{categoryId}")
 	public ResponseEntity<EnumMap<ApiKey, Object>> deleteCategory(@PathVariable("categoryId") Integer categoryId) {
-		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Delete Category");
 			categoryService.deleteCategory(categoryId);
@@ -82,11 +80,10 @@ public class CategoryController {
 
 	@GetMapping("/{categoryId}")
 	public ResponseEntity<Map<ApiKey, Object>> getCategory(@Valid @PathVariable("categoryId") Integer categoryId) {
-		Map<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		Map<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Fetch Category");
-			Category getCat = categoryService.getCategory(categoryId);
-			map.put(DATA, getCat);
+			map.put(DATA, categoryService.getCategory(categoryId));
 			map.put(SUCCESS, true);
 		} catch (Exception e) {
 			log.error("Error Fetch Category");
@@ -96,11 +93,10 @@ public class CategoryController {
 
 	@GetMapping
 	public ResponseEntity<EnumMap<ApiKey, Object>> getAllCategory() {
-		EnumMap<ApiKey, Object> map=new EnumMap<>(ApiKey.class);
+		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Fetch All Category");
-			List<CategoryDto> allCat = categoryService.getCategories();
-			map.put(DATA, allCat);
+			map.put(DATA, categoryService.getCategories());
 			map.put(SUCCESS, true);
 		} catch (Exception e) {
 			log.info("Error Fetch All Category");

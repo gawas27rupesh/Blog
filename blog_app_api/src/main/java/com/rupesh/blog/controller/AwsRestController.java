@@ -23,24 +23,27 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/aws")
 @RequiredArgsConstructor
 public class AwsRestController {
-	
+
 	private final AmazonClient amazonClient;
 
 	@PostMapping("/saveImage")
-	public ResponseEntity<Map<String, Object>> uploadImageToS3(@RequestParam MultipartFile file){
+	public ResponseEntity<Map<String, Object>> uploadImageToS3(@RequestParam MultipartFile file) {
 		return new ResponseEntity<>(amazonClient.uploadFile(file), HttpStatus.OK);
 	}
+
 	@GetMapping("/getImageFromS3")
-	public ResponseEntity<Map<String, Object>> getImageFromS3(@RequestParam String objectKey){
+	public ResponseEntity<Map<String, Object>> getImageFromS3(@RequestParam String objectKey) {
 		return new ResponseEntity<>(amazonClient.getImagesFromS3(objectKey), HttpStatus.OK);
 	}
+
 	@DeleteMapping("/deleteImageFromS3")
-	public ResponseEntity<String> deleteImageFromS3(@RequestParam String objectKey){
+	public ResponseEntity<String> deleteImageFromS3(@RequestParam String objectKey) {
 		return new ResponseEntity<>(amazonClient.deleteImageFromS3(objectKey), HttpStatus.OK);
 	}
+
 	@GetMapping("/getAllImageFromS3")
-	public ResponseEntity<List<String>> getAllImageFromS3(){
+	public ResponseEntity<List<String>> getAllImageFromS3() {
 		return new ResponseEntity<>(amazonClient.listFileFromS3Bucket(), HttpStatus.OK);
 	}
-	
+
 }

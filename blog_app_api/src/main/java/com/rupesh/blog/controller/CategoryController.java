@@ -6,7 +6,6 @@ import static org.springframework.http.ResponseEntity.created;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentContextPath;
 
 import java.util.EnumMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rupesh.blog.dto.CategoryDto;
-import com.rupesh.blog.entities.Category;
 import com.rupesh.blog.enums.ApiKey;
 import com.rupesh.blog.services.CategoryService;
 

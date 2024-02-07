@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -32,7 +31,7 @@ import lombok.RequiredArgsConstructor;
 public class SecurityConfig {
 	
 	public static final String[] PUBLIC_URLS = { "/api/v1/auth/**", "/v3/api-docs", "/v2/api-docs",
-			"/swagger-resources/**", "/swagger-ui/**", "/webjars/**" }; //http://localhost:8080/swagger-ui/index.html
+			"/swagger-resources/**", "/swagger-ui/**", "/webjars/**" }; 
 	
 	private final CustomUserDetailsService customUserDetailsService;
 	private final JwtAuthonticationEntryPoint jwtAuthonticationEntryPoint;

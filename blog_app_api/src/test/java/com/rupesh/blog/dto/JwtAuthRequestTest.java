@@ -11,12 +11,14 @@ public class JwtAuthRequestTest {
 
 	@Test
 	void setter() {
-		
+		jwtAuthRequest.setUsername("abc");
+		jwtAuthRequest.setPassword("abc");
 	}
 	
 	@Test
 	void getter() {
-		
+		jwtAuthRequest.getUsername();
+		jwtAuthRequest.getPassword();
 	}
 	
 }

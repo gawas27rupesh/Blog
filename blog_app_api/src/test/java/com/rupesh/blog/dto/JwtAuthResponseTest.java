@@ -11,11 +11,12 @@ public class JwtAuthResponseTest {
 
 	@Test
 	void setter() {
-		
+		jwtAuthResponse.setToken("abc");
 	}
 	
 	@Test
 	void getter() {
+		jwtAuthResponse.getToken();
 		
 	}
 	

@@ -11,12 +11,14 @@ public class RoleDtoTest {
 	
 	@Test
 	void setter() {
-		
+		roleDto.setId(1);
+		roleDto.setName("abc");
 	}
 	
 	@Test
 	void getter() {
-		
+		roleDto.getId();
+		roleDto.getName();
 	}
 	
 }

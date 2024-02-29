@@ -11,12 +11,16 @@ public class CategoryDtoTest {
 
 	@Test
 	void setter() {
-		
+		categoryDto.setCategoryId(1);
+		categoryDto.setCategoryTitle("abc");
+		categoryDto.setCategoryDescription("abc");
 	}
 	
 	@Test
 	void getter() {
-		
+		categoryDto.getCategoryId();
+		categoryDto.getCategoryTitle();
+		categoryDto.getCategoryDescription();
 	}
 	
 }

@@ -11,12 +11,14 @@ public class CommentDtoTest {
 
 	@Test
 	void setter() {
-		
+		commentDto.setId(1);
+		commentDto.setContent("abc");
 	}
 	
 	@Test
 	void getter() {
-		
+		commentDto.getId();
+		commentDto.getContent();
 	}
 	
 }

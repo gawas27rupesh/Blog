@@ -2,9 +2,11 @@ package com.rupesh.blog.dto;
 
 import java.io.Serializable;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class RoleDto implements Serializable{
 	/**
 	 * 

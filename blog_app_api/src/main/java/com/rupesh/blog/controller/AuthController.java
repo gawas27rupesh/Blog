@@ -44,7 +44,7 @@ public class AuthController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 
-	private void authenticate(String username, String password) {
+	public void authenticate(String username, String password) {
 		UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(username,
 				password);
 		try {

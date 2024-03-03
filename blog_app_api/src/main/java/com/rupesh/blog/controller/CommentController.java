@@ -42,7 +42,8 @@ public class CommentController {
 		} catch (Exception e) {
 			log.error("Error Create Comment");
 		}
-		return created(fromCurrentContextPath().build().toUri()).body(map);
+		//return created(fromCurrentContextPath().build().toUri()).body(map);
+		return ResponseEntity.ok(map);
 	}
 
 	@DeleteMapping("/{commentId}")
@@ -50,8 +51,7 @@ public class CommentController {
 		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Delete Comment");
-			commentService.deleteComment(commentId);
-			map.put(MESSAGE, "Comment Deleted Successfully");
+			map.put(MESSAGE, commentService.deleteComment(commentId));
 			map.put(SUCCESS, true);
 		} catch (Exception e) {
 			log.info("Delete Comment");

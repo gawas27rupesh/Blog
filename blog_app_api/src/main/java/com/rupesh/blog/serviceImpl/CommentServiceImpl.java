@@ -38,9 +38,10 @@ public class CommentServiceImpl implements CommentService{
 
 	@Override
 	@CacheEvict("blogCache")
-	public void deleteComment(Integer commentId) {
+	public String deleteComment(Integer commentId) {
 		log.info("Service Implementation");
 		Comment comment = this.commentRepo.findById(commentId).orElseThrow(()->new ResourceNotFoundException("Comment","commentId",commentId));
 		this.commentRepo.delete(comment);
+		return "success";
 	}
 }

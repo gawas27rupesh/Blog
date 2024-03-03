@@ -45,7 +45,8 @@ public class CategoryController {
 		} catch (Exception e) {
 			log.error("Category add Error.");
 		}
-		return created(fromCurrentContextPath().build().toUri()).body(map);
+		//return created(fromCurrentContextPath().build().toUri()).body(map);
+		return ResponseEntity.ok(map);
 	}
 
 	@PutMapping("/{categoryId}")
@@ -67,8 +68,7 @@ public class CategoryController {
 		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Delete Category");
-			categoryService.deleteCategory(categoryId);
-			map.put(DATA, "Category deleted Successfully");
+			map.put(DATA, categoryService.deleteCategory(categoryId));
 			map.put(SUCCESS, true);
 		} catch (Exception e) {
 			log.error("Error Delete Category");

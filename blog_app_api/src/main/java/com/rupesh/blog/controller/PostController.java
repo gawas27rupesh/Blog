@@ -118,8 +118,8 @@ public class PostController {
 		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Delete Post");
-			postService.deletePost(postId);
-			map.put(MESSAGE, "Post is successfully deleted !!");
+			;
+			map.put(MESSAGE,postService.deletePost(postId));
 		} catch (Exception e) {
 			log.error("Error Delete Post");
 		}

@@ -8,7 +8,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PostResponse implements Serializable{
+public class PostResponseDto implements Serializable{
 	/**
 	 * 
 	 */

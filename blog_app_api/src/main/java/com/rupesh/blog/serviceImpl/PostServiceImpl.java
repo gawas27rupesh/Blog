@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.rupesh.blog.aws.AmazonClient;
 import com.rupesh.blog.dto.PostDto;
-import com.rupesh.blog.dto.PostResponse;
+import com.rupesh.blog.dto.PostResponseDto;
 import com.rupesh.blog.entities.Category;
 import com.rupesh.blog.entities.Post;
 import com.rupesh.blog.entities.User;
@@ -80,16 +80,17 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	@CacheEvict("blogCache")
-	public void deletePost(Integer postId) {
+	public String deletePost(Integer postId) {
 		log.info("Service Implementation");
 		Post post = this.postRepo.findById(postId)
 				.orElseThrow(() -> new ResourceNotFoundException("Post", "postid", postId));
 		this.postRepo.delete(post);
+		return "success";
 	}
 
 	@Override
 	@Cacheable("blogCache")
-	public PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
+	public PostResponseDto getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
 		log.info("Service Implementation");
 		Sort sort = (sortDir.equalsIgnoreCase("asc")) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
 		Pageable p = PageRequest.of(pageNumber, pageSize, sort);
@@ -103,7 +104,7 @@ public class PostServiceImpl implements PostService {
 			return postDto;
 		}).collect(Collectors.toList());
 
-		PostResponse postResponse = new PostResponse();
+		PostResponseDto postResponse = new PostResponseDto();
 		postResponse.setContent(postDtos);
 		postResponse.setPageNumber(pagePost.getNumber());
 		postResponse.setPageSize(pagePost.getSize());
@@ -138,7 +139,7 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	@Cacheable("blogCache")
-	public PostResponse getPostsByCategory(Integer categoryId, Integer pageNumber, Integer pageSize) {
+	public PostResponseDto getPostsByCategory(Integer categoryId, Integer pageNumber, Integer pageSize) {
 		log.info("Service Implementation");
 		Pageable p = PageRequest.of(pageNumber, pageSize);
 		Category category = this.categoryRepo.findById(categoryId)
@@ -152,7 +153,7 @@ public class PostServiceImpl implements PostService {
 			return map;
 		}).collect(Collectors.toList());
 		
-		PostResponse postResponse = new PostResponse();
+		PostResponseDto postResponse = new PostResponseDto();
 		postResponse.setContent(postDtos);
 		postResponse.setPageNumber(pagePost.getNumber());
 		postResponse.setPageSize(pagePost.getSize());
@@ -164,7 +165,7 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	@Cacheable("blogCache")
-	public PostResponse getPostsByUSer(Integer userId, Integer pageNumber, Integer pageSize) {
+	public PostResponseDto getPostsByUSer(Integer userId, Integer pageNumber, Integer pageSize) {
 		log.info("Service Implementation");
 		Pageable p = PageRequest.of(pageNumber, pageSize);
 		User user = this.userRepo.findById(userId)
@@ -173,7 +174,7 @@ public class PostServiceImpl implements PostService {
 		
 		List<PostDto> postDtos = pagePost.stream().map(post -> modelMapper.map(post, PostDto.class)).collect(Collectors.toList());
 		
-		PostResponse postResponse = new PostResponse();
+		PostResponseDto postResponse = new PostResponseDto();
 		postResponse.setContent(postDtos);
 		postResponse.setPageNumber(pagePost.getNumber());
 		postResponse.setPageSize(pagePost.getSize());

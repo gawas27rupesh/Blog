@@ -9,7 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class PostResponseTest {
 	
-	PostResponse postResponse=new PostResponse();
+	PostResponseDto postResponse=new PostResponseDto();
 	List<PostDto> content;
 
 	@Test

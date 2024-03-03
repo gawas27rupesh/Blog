@@ -48,7 +48,8 @@ public class UserController {
 		} catch (Exception e) {
 			log.info("Added User");
 		}
-		return created(fromCurrentContextPath().build().toUri()).body(map);
+		//return created(fromCurrentContextPath().build().toUri()).body(map);
+		return ResponseEntity.ok(map);
 	}
 
 	@PutMapping("/{userId}")
@@ -72,8 +73,7 @@ public class UserController {
 		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Delete User");
-			userService.deleteUser(uid);
-			map.put(MESSAGE, "User Delete Successfully.");
+			map.put(MESSAGE, userService.deleteUser(uid));
 		} catch (Exception e) {
 			log.error("Error Delete User");
 		}

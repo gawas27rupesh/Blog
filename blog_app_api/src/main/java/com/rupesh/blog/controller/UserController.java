@@ -3,8 +3,6 @@ package com.rupesh.blog.controller;
 import static com.rupesh.blog.enums.ApiKey.DATA;
 import static com.rupesh.blog.enums.ApiKey.MESSAGE;
 import static com.rupesh.blog.enums.ApiKey.SUCCESS;
-import static org.springframework.http.ResponseEntity.created;
-import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentContextPath;
 
 import java.util.EnumMap;
 

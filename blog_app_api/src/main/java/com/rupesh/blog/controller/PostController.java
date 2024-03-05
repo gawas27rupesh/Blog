@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rupesh.blog.config.AppConstants;
+import com.rupesh.blog.constant.AppConstants;
 import com.rupesh.blog.dto.PostDto;
 import com.rupesh.blog.enums.ApiKey;
 import com.rupesh.blog.services.PostService;

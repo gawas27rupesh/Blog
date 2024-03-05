@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.rupesh.blog.config.AppConstants;
+import com.rupesh.blog.constant.AppConstants;
 import com.rupesh.blog.entities.Role;
 import com.rupesh.blog.repositories.RoleRepo;
 

@@ -1,4 +1,4 @@
-package com.rupesh.blog.config;
+package com.rupesh.blog.constant;
 
 public class AppConstants {
 	

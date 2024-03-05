@@ -11,7 +11,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rupesh.blog.dto.PostDto;
 import com.rupesh.blog.dto.PostResponseDto;
 import com.rupesh.blog.services.PostService;
@@ -25,11 +27,18 @@ class PostControllerTest {
 	@Mock
 	PostService postService;
 	
+	@Mock
+	MultipartFile file;
+	
+	@Mock
+	ObjectMapper mapper;
+	
 	@Test
 	void createPostTest() throws IOException {
-		PostDto postDto=mock(PostDto.class);
-		assertNotNull(postController.createPost(null, null, null, null));
-		}
+		PostDto createPost=new PostDto();
+		when(postService.createPost(createPost, file, 1, 1)).thenReturn(createPost);
+		assertNotNull(postController.createPost(file,"abc", 1, 1));
+	}
 
 	
 	@Test

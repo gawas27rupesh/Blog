@@ -9,7 +9,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.rupesh.blog.config.AppConstants;
+import com.rupesh.blog.constant.AppConstants;
 import com.rupesh.blog.dto.UserDto;
 import com.rupesh.blog.entities.Role;
 import com.rupesh.blog.entities.User;

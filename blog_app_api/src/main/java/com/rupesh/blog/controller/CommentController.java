@@ -40,7 +40,6 @@ public class CommentController {
 		} catch (Exception e) {
 			log.error("Error Create Comment");
 		}
-		//return created(fromCurrentContextPath().build().toUri()).body(map);
 		return ResponseEntity.ok(map);
 	}
 

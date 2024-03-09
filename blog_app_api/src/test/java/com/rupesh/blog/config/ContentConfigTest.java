@@ -10,6 +10,8 @@ import org.springframework.http.MediaType;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 
+import com.rupesh.blog.configContent.ContentConfig;
+
 @ExtendWith(MockitoExtension.class)
 class ContentConfigTest {
 	

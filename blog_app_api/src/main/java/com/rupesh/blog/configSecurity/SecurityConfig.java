@@ -1,4 +1,4 @@
-package com.rupesh.blog.config;
+package com.rupesh.blog.configSecurity;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

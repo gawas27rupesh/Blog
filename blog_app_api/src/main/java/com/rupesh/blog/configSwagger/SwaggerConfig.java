@@ -1,4 +1,4 @@
-package com.rupesh.blog.config;
+package com.rupesh.blog.configSwagger;
 
 import java.util.Arrays;
 import java.util.Collections;

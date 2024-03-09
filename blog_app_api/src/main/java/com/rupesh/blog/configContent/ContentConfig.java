@@ -1,4 +1,4 @@
-package com.rupesh.blog.config;
+package com.rupesh.blog.configContent;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

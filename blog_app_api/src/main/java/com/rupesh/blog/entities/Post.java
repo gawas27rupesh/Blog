@@ -40,7 +40,7 @@ public class Post implements Serializable{
 	private String title;
 	@Column(length = 10000)
 	private String content;
-	//private byte[] image;
+	private byte[] image;
 	private String imageName;
 	private Date addedDate;
 	

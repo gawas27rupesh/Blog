@@ -19,22 +19,14 @@ public class PostDto implements Serializable{
 	private Integer postId;
 	@NotEmpty
 	private String title;
-	
 	@NotEmpty
 	private String content;
-	
 	private String imageName;
-	
 	private byte[] image;
-	
 	private String objectKey;
-	
 	private String addedDate;
-	
 	private CategoryDto category;
-	
 	private UserDto user;
-	
 	private Set<CommentDto> comments=new HashSet<>();
 
 	

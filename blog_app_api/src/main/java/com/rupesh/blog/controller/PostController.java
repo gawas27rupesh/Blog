@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rupesh.blog.constant.AppConstants;
 import com.rupesh.blog.dto.PostDto;
 import com.rupesh.blog.enums.ApiKey;
@@ -35,17 +34,14 @@ import lombok.extern.slf4j.Slf4j;
 public class PostController {
 
 	private final PostService postService;
-	private final ObjectMapper mapper;
 
 	@PostMapping(value = "/user/{userId}/category/{categoryId}/posts")
-	public ResponseEntity<EnumMap<ApiKey, Object>> createPost(@RequestParam("image") MultipartFile file,
-			@RequestParam("userData") String userData, @PathVariable Integer userId, @PathVariable Integer categoryId)
+	public ResponseEntity<EnumMap<ApiKey, Object>> createPost(@RequestBody PostDto postDto,@RequestParam("image") MultipartFile file, @PathVariable Integer userId, @PathVariable Integer categoryId)
 			throws IOException {
 		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Create Post");
-			PostDto createPost = mapper.readValue(userData, PostDto.class);
-			map.put(DATA, postService.createPost(createPost, file, userId, categoryId));
+			map.put(DATA, postService.createPost(postDto, file, userId, categoryId));
 			map.put(SUCCESS, true);
 		} catch (Exception e) {
 			log.error("Error Create Post");

@@ -14,7 +14,7 @@ public class UserMapper {
 
 	}
 	
-	public static final Function<User, Optional<UserDto>> TO_COMMENT = e -> evalMapper(e,
+	public static final Function<User, Optional<UserDto>> TO_USER = e -> evalMapper(e,
 			UserDto.class);
 	
 }

@@ -1,11 +1,13 @@
 
 package com.rupesh.blog.serviceImpl;
 
+import static com.rupesh.blog.evalMapper.UserMapper.TO_USER;
+
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -50,7 +52,6 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	@Cacheable("userCache")
 	public UserDto getUserById(Integer userId) {
 		log.info("Service Implementation");
 		User user = this.userRepo.findById(userId)
@@ -59,13 +60,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	@Cacheable("userCache")
-	public List<UserDto> getAllUsers() {
+	public List<Optional<UserDto>> getAllUsers() {
 		log.info("Service Implementation");
 		List<User> users = this.userRepo.findAll();
-		List<UserDto> userDto = users.stream().map(user -> this.modelMapper.map(user, UserDto.class))
-				.collect(Collectors.toList());
-		return userDto;
+		//List<UserDto> userDto = users.stream().map(u->modelMapper.map(u, UserDto.class)).collect(Collectors.toList());
+		return users.stream().map(u->TO_USER.apply(u)).collect(Collectors.toList());
 	}
 
 	@Override

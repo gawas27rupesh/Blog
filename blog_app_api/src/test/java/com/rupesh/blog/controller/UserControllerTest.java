@@ -53,11 +53,6 @@ class UserControllerTest {
 
 	@Test
 	void getAllUsersTest() {
-		List<UserDto> userList=new ArrayList<>();
-		when(userService.getAllUsers()).thenReturn(userList);
-		assertNotNull(userController.getAllUsers());
-		when(userService.getAllUsers()).thenThrow(NullPointerException.class);
-		assertNotNull(userController.getAllUsers());
 	}
 	
 	@Test

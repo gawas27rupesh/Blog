@@ -43,7 +43,6 @@ public class CategoryController {
 		} catch (Exception e) {
 			log.error("Category add Error.");
 		}
-		//return created(fromCurrentContextPath().build().toUri()).body(map);
 		return ResponseEntity.ok(map);
 	}
 

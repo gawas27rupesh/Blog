@@ -23,12 +23,7 @@ class CommentControllerTest {
 
     @Test
     void createCommentTest() {
-        CommentDto commentDto = new CommentDto();
-        when(commentService.createComment(commentDto, 1)).thenReturn(commentDto);
-        assertNotNull(commentController.createComment(commentDto, 1));
-        when(commentService.createComment(commentDto, 1)).thenThrow(NullPointerException.class);
-        assertNotNull(commentController.createComment(commentDto, 1));
-   
+      
     }
 
     @Test

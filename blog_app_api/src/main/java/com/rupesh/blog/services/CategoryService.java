@@ -1,6 +1,7 @@
 package com.rupesh.blog.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -8,13 +9,13 @@ import com.rupesh.blog.dto.CategoryDto;
 
 public interface CategoryService {
 
-	CategoryDto createCategory(CategoryDto categoryDto);
+	Optional<CategoryDto> createCategory(CategoryDto categoryDto);
 	
 	String deleteCategory(Integer categoryId);
 	
-	List<CategoryDto> getCategories();
+	List<Optional<CategoryDto>> getCategories();
 
-	CategoryDto getCategory(Integer categoryId);
+	Optional<CategoryDto> getCategory(Integer categoryId);
 
-	CategoryDto updateCategory(@Valid CategoryDto categoryDto, Integer categoryId);
+	Optional<CategoryDto> updateCategory(@Valid CategoryDto categoryDto, Integer categoryId);
 }

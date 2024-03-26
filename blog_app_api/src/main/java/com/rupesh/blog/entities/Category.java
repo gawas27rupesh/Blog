@@ -1,6 +1,5 @@
 package com.rupesh.blog.entities;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,12 +22,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name = "categories")
-public class Category implements Serializable {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -3,7 +3,6 @@ package com.rupesh.blog.serviceImpl;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -15,9 +14,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import com.rupesh.blog.aws.AmazonClient;
 import com.rupesh.blog.dto.PostDto;
 import com.rupesh.blog.dto.PostResponseDto;
 import com.rupesh.blog.entities.Category;
@@ -28,7 +25,6 @@ import com.rupesh.blog.repositories.CategoryRepo;
 import com.rupesh.blog.repositories.PostRepo;
 import com.rupesh.blog.repositories.UserRepo;
 import com.rupesh.blog.services.PostService;
-import com.rupesh.blog.util.NewMultipartFile;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -43,11 +39,11 @@ public class PostServiceImpl implements PostService {
 	private final UserRepo userRepo;
 	private final ModelMapper modelMapper;
 
-	private final AmazonClient s3Client;
+	//private final AmazonClient s3Client;
 
 	@Override
 	@Cacheable("blogCache")
-	public PostDto createPost(PostDto postDto, MultipartFile file, Integer userId, Integer categoryId)
+	public PostDto createPost(PostDto postDto, Integer userId, Integer categoryId)
 			throws IOException {
 		log.info("Service Implementation");
 		User user = this.userRepo.findById(userId)
@@ -58,13 +54,8 @@ public class PostServiceImpl implements PostService {
 		post.setAddedDate(new Date());
 		post.setUser(user);
 		post.setCategory(category);
-		post.setImageName(file.getOriginalFilename());
-		String fileKey = (new Date().getTime() + "_" + file.getOriginalFilename()).replaceAll(" ", "_");
-		post.setObjectKey(fileKey);
 		Post newPost = this.postRepo.save(post);
-		MultipartFile newFile = new NewMultipartFile(file.getBytes(), fileKey, file.getContentType());
 
-		s3Client.uploadFile(newFile);
 		return this.modelMapper.map(newPost, PostDto.class);
 	}
 
@@ -89,7 +80,6 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	@Cacheable("blogCache")
 	public PostResponseDto getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
 		log.info("Service Implementation");
 		Sort sort = (sortDir.equalsIgnoreCase("asc")) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
@@ -99,8 +89,6 @@ public class PostServiceImpl implements PostService {
 		
 		List<PostDto> postDtos = allPosts.stream().map(post -> {
 			PostDto postDto = this.modelMapper.map(post, PostDto.class);
-			Map<String, Object> imagesFromS3 = s3Client.getImagesFromS3(postDto.getObjectKey());
-			postDto.setImage((byte[]) imagesFromS3.get("Data2"));
 			return postDto;
 		}).collect(Collectors.toList());
 
@@ -132,8 +120,6 @@ public class PostServiceImpl implements PostService {
 		Post post = this.postRepo.findById(postId)
 				.orElseThrow(() -> new ResourceNotFoundException("Post", "postid", postId));
 		PostDto postDto = this.modelMapper.map(post, PostDto.class);
-		Map<String, Object> imagesFromS3 = s3Client.getImagesFromS3(postDto.getObjectKey());
-		postDto.setImage((byte[]) imagesFromS3.get("Data2"));
 		return postDto;
 	}
 
@@ -148,8 +134,6 @@ public class PostServiceImpl implements PostService {
 		
 		List<PostDto> postDtos = pagePost.stream().map(dev->{
 			PostDto map = modelMapper.map(dev, PostDto.class);
-			Map<String, Object> imagesFromS3 = s3Client.getImagesFromS3(dev.getObjectKey());
-			map.setImage((byte[]) imagesFromS3.get("Data2"));
 			return map;
 		}).collect(Collectors.toList());
 		

@@ -1,6 +1,5 @@
 package com.rupesh.blog.dto;
 
-import java.io.Serializable;
 import java.util.List;
 
 import lombok.Getter;
@@ -8,11 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PostResponseDto implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class PostResponseDto {
 	private List<PostDto> content;
 	private int pageNumber;
 	private int pageSize;

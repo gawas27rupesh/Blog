@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import java.io.IOException;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -32,14 +30,6 @@ class PostControllerTest {
 	
 	@Mock
 	ObjectMapper mapper;
-	
-	//@Test
-	void createPostTest() throws IOException {
-		PostDto createPost=new PostDto();
-		when(postService.createPost(createPost, file, 1, 1)).thenReturn(createPost);
-		//assertNotNull(postController.createPost(file,"abc", 1, 1));
-	}
-
 	
 	@Test
 	void getPostByUserTest() {

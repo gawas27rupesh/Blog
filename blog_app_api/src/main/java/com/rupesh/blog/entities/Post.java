@@ -2,7 +2,6 @@ package com.rupesh.blog.entities;
 
 
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,21 +26,21 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "posts")
-public class Post implements Serializable{
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class Post {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer postId;
+	
 	@Column(name = "post_title",length = 100,nullable = false)
 	private String title;
+	
 	@Column(length = 10000)
 	private String content;
+	
 	private byte[] image;
+	
 	private String imageName;
+	
 	private Date addedDate;
 	
 	@Column(name = "object_key")

@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.rupesh.blog.constant.AppConstants;
 import com.rupesh.blog.dto.PostDto;
@@ -36,12 +35,13 @@ public class PostController {
 	private final PostService postService;
 
 	@PostMapping(value = "/user/{userId}/category/{categoryId}/posts")
-	public ResponseEntity<EnumMap<ApiKey, Object>> createPost(@RequestBody PostDto postDto,@RequestParam("image") MultipartFile file, @PathVariable Integer userId, @PathVariable Integer categoryId)
+	public ResponseEntity<EnumMap<ApiKey, Object>> createPost(@RequestBody PostDto postDto, @PathVariable Integer userId, @PathVariable Integer categoryId)
 			throws IOException {
 		EnumMap<ApiKey, Object> map = new EnumMap<>(ApiKey.class);
 		try {
 			log.info("Create Post");
-			map.put(DATA, postService.createPost(postDto, file, userId, categoryId));
+			System.out.println("==============data========"+postDto);
+			map.put(DATA, postService.createPost(postDto, userId, categoryId));
 			map.put(SUCCESS, true);
 		} catch (Exception e) {
 			log.error("Error Create Post");

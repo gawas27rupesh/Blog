@@ -1,17 +1,11 @@
 package com.rupesh.blog.dto;
 
-import java.io.Serializable;
-
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class RoleDto implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class RoleDto {
 	private Integer id;
 	private String name;
 }

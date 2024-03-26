@@ -1,6 +1,5 @@
 package com.rupesh.blog.dto;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,14 +7,13 @@ import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
-public class PostDto implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+@ToString
+public class PostDto {
+	
 	private Integer postId;
 	@NotEmpty
 	private String title;
@@ -27,7 +25,6 @@ public class PostDto implements Serializable{
 	private String addedDate;
 	private CategoryDto category;
 	private UserDto user;
-	private Set<CommentDto> comments=new HashSet<>();
+	private Set<CommentDto> comments = new HashSet<>();
 
-	
 }

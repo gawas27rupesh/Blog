@@ -21,8 +21,7 @@ public class PostDtoTest {
 		postDto.setPostId(1);
 		postDto.setTitle("abc");
 		postDto.setContent("abc");
-		postDto.setImageName("abc");
-		postDto.setImage(image);
+		//postDto.setImageName("abc");
 		postDto.setObjectKey("abc");
 		postDto.setAddedDate("abc");
 		postDto.setCategory(category);
@@ -35,7 +34,7 @@ public class PostDtoTest {
 		postDto.getPostId();
 		postDto.getTitle();
 		postDto.getContent();
-		postDto.getImageName();
+		//postDto.getImageName();
 		postDto.getImage();
 		postDto.getObjectKey();
 		postDto.getAddedDate();

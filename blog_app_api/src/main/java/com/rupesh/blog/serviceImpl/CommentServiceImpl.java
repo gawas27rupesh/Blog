@@ -1,9 +1,5 @@
 package com.rupesh.blog.serviceImpl;
 
-import static com.rupesh.blog.evalMapper.CommentMapper.TO_COMMENT;
-
-import java.util.Optional;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -28,12 +24,13 @@ public class CommentServiceImpl implements CommentService{
 	private final CommentRepo commentRepo;
 
 	@Override
-	public Optional<CommentDto> createComment(CommentDto commentDto, Integer postId) {
+	public CommentDto createComment(CommentDto commentDto, Integer postId) {
 		log.info("Service Implementation");
 		Post post =postRepo.findById(postId).orElseThrow(()->new ResourceNotFoundException("Post", "postId", postId));
 		Comment comment =modelMapper.map(commentDto, Comment.class);
 		comment.setPost(post);
-		return TO_COMMENT.apply(commentRepo.save(comment));
+		Comment saveComment = this.commentRepo.save(comment);
+		return modelMapper.map(saveComment, CommentDto.class);
 	}
 
 	@Override

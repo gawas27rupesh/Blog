@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -20,11 +21,13 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
+@ToString
 @Table(name = "posts")
 public class Post {
 	@Id
@@ -37,7 +40,9 @@ public class Post {
 	@Column(length = 10000)
 	private String content;
 	
-	private byte[] image;
+	@Lob
+    @Column
+    private byte[] image;
 	
 	private String imageName;
 	

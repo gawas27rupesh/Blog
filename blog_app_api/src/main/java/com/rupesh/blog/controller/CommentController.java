@@ -38,7 +38,7 @@ public class CommentController {
 			map.put(SUCCESS, true);
 			log.info("Create Comment");
 		} catch (Exception e) {
-			log.error("Error Create Comment");
+			log.error("Error Create Comment",e);
 		}
 		return ResponseEntity.ok(map);
 	}

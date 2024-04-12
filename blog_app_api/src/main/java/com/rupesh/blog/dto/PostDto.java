@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -20,6 +22,7 @@ public class PostDto {
 	@NotEmpty
 	private String content;
 	private String imageName;
+	private MultipartFile imageFile;
 	private byte[] image;
 	private String objectKey;
 	private String addedDate;

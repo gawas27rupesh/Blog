@@ -1,7 +1,6 @@
 package com.rupesh.blog.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.rupesh.blog.dto.UserDto;
 
@@ -15,7 +14,7 @@ public interface UserService {
 	
 	UserDto getUserById(Integer userId);
 	
-	List<Optional<UserDto>> getAllUsers();
+	List<UserDto> getAllUsers();
 	
 	String deleteUser(Integer userId);
 

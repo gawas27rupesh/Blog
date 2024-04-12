@@ -1,10 +1,7 @@
 
 package com.rupesh.blog.serviceImpl;
 
-import static com.rupesh.blog.evalMapper.UserMapper.TO_USER;
-
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
@@ -60,12 +57,14 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<Optional<UserDto>> getAllUsers() {
+	public List<UserDto> getAllUsers() {
 		log.info("Service Implementation");
 		List<User> users = this.userRepo.findAll();
-		//List<UserDto> userDto = users.stream().map(u->modelMapper.map(u, UserDto.class)).collect(Collectors.toList());
-		return users.stream().map(u->TO_USER.apply(u)).collect(Collectors.toList());
-	}
+		List<UserDto> userDto = users.stream().map(u->modelMapper.map(u, UserDto.class)).collect(Collectors.toList());
+		//return users.stream().map(u->TO_USER.apply(u)).collect(Collectors.toList());
+		//return users.stream().map(TO_USER::apply).collect(Collectors.toList());
+		return userDto;
+		}
 
 	@Override
 	public String deleteUser(Integer userId) {

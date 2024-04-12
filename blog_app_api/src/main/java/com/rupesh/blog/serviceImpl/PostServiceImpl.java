@@ -45,18 +45,26 @@ public class PostServiceImpl implements PostService {
 	@Cacheable("blogCache")
 	public PostDto createPost(PostDto postDto, Integer userId, Integer categoryId)
 			throws IOException {
-		log.info("Service Implementation");
-		User user = this.userRepo.findById(userId)
-				.orElseThrow(() -> new ResourceNotFoundException("User", "User id", userId));
-		Category category = this.categoryRepo.findById(categoryId)
-				.orElseThrow(() -> new ResourceNotFoundException("Category", "CategoryId", categoryId));
-		Post post = this.modelMapper.map(postDto, Post.class);
-		post.setAddedDate(new Date());
-		post.setUser(user);
-		post.setCategory(category);
-		Post newPost = this.postRepo.save(post);
+		try {
+			log.info("Service Implementation");
+			User user = this.userRepo.findById(userId)
+					.orElseThrow(() -> new ResourceNotFoundException("User", "User id", userId));
+			Category category = this.categoryRepo.findById(categoryId)
+					.orElseThrow(() -> new ResourceNotFoundException("Category", "CategoryId", categoryId));
+			Post post = this.modelMapper.map(postDto, Post.class);
+			
+			post.setAddedDate(new Date());
+			post.setUser(user);
+			post.setImage(postDto.getImageFile().getBytes());
+			post.setImageName(postDto.getImageFile().getOriginalFilename());
+			post.setCategory(category);
+			Post newPost = this.postRepo.save(post);
 
-		return this.modelMapper.map(newPost, PostDto.class);
+			return modelMapper.map(newPost, PostDto.class);
+		} catch (Exception e) {
+			log.error("error",e);
+			return null;
+		}
 	}
 
 	@Override
@@ -114,7 +122,6 @@ public class PostServiceImpl implements PostService {
 
 	
 	@Override
-	@Cacheable("blogCache")
 	public PostDto getPostById(Integer postId) {
 		log.info("Service Implementation");
 		Post post = this.postRepo.findById(postId)
@@ -124,7 +131,6 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	@Cacheable("blogCache")
 	public PostResponseDto getPostsByCategory(Integer categoryId, Integer pageNumber, Integer pageSize) {
 		log.info("Service Implementation");
 		Pageable p = PageRequest.of(pageNumber, pageSize);
@@ -148,7 +154,6 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	@Cacheable("blogCache")
 	public PostResponseDto getPostsByUSer(Integer userId, Integer pageNumber, Integer pageSize) {
 		log.info("Service Implementation");
 		Pageable p = PageRequest.of(pageNumber, pageSize);
